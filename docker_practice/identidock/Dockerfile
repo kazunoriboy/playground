@@ -1,6 +1,7 @@
-FROM python:3.4
+FROM python:3.7
 
-RUN pip install Flask==0.10.1 uWSGI==2.0.8
+RUN pip install --upgrade pip
+RUN pip install Flask uWSGI
 WORKDIR /app
 COPY app /app
 
