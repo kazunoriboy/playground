@@ -4,6 +4,9 @@ proxy:
    - identidock
   ports:
    - "80:80"
+  environment:
+   - NGINX_HOST=identidock.com
+   - NGINX_PROXY=http:identidock:9090
 identidock:
   image: amouat/identidock:1.0
   links:
