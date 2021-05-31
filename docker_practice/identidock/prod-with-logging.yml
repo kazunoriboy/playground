@@ -1,5 +1,5 @@
 proxy:
-  image: kazunoriboy/proxy:1.0
+  image: amouat/proxy:1.0
   links:
     - identidock
   ports:
