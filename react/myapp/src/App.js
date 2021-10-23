@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 function Counter(props) {
-  const [count, setcount] = useState(0);
+  const { count, setCount } = props;
   return (
     <div>
-      <button onClick={() => setcount(count + 1)}>Add</button>
+      <button onClick={() => setCount(count + 1)}>Add</button>
       Click Count: {count} times
     </div>
   );
@@ -39,15 +39,17 @@ export default function App(props) {
     { id: 3, name: "work about magazine", done: false },
   ];
 
+  const [count, setCount] = useState(0);
+
   return (
     <div>
       <h2>Todo Mock</h2>
       <ToDoList items={items} />
       <h2>Counter</h2>
       <div>
-        <Counter />
-        <Counter />
-        <Counter />
+        <Counter count={count} setCount={setCount} />
+        <Counter count={count} setCount={setCount} />
+        <Counter count={count} setCount={setCount} />
       </div>
     </div>
   )
