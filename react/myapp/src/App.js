@@ -73,7 +73,7 @@ export default function App(props) {
       </div>
       <h2>Canvas</h2>
       <div>
-        <Pie percent={80} />
+        <Pie color="#11ff00" percent={80} />
       </div>
     </div>
   )
