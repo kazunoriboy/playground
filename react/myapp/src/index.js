@@ -1,25 +1,28 @@
-import ReactDOM from 'react-dom';
-import { useState, createContext, useContext } from 'react'
+import ReactDOM from "react-dom";
+import { useReducer } from "react";
 
-const Context = createContext({
-    count: 0
-});
+const initialState = 0;
+const reducer = (count = initialState, action) => {
+    switch (action.type) {
+        case "add_count":
+            const newCount = count + 1;
+            return newCount;
+        default:
+            return count;
+    }
+};
 
 const App = () => {
-    const [count, setCount] = useState(0);
+    const [count, dispatch] = useReducer(reducer, initialState);
     const handleAddCount = () => {
-        setCount((prevCounter) => prevCounter + 1);
+        dispatch({ type: "add_count", payload: count });
     };
     return (
-        <Context.Provider value={{ count }}>
+        <div>
             <button onClick={handleAddCount}>+1</button>
-            <ChildComponent />
-        </Context.Provider>
+            <p>{count}</p>
+        </div>
     );
 };
-const ChildComponent = () => {
-    const { count } = useContext(Context);
-    return <p>countの数値は{count}です。</p>;
-};
-console.log('dddd', ReactDOM);
+
 ReactDOM.render(<App />, document.getElementById("root"));
