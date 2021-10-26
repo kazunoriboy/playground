@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+a {
+  text-decoration: none;
+  color: #484848;
+  transition: 0.3s ease-out;
+}
+
+a:hover {
+  color: #7fbfff;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.shop {
+  display: flex;
+  gap: 2rem;
+}
+
+.shop_item {
+  padding: 1rem;
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 1px 1px 3px #b1b1b1;
+}
+
+.shop_itemName {
+  text-align: left;
+  font-weight: bold;
+}
+
+.shop_description {
+  font-size: 12px;
+  max-width: 300px;
+}
+
+.shop_addButton {
+  border: none;
+  background: #2b91ff;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.cart {
+  margin: 4rem;
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.cart_title {
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart_item {
+  display: flex;
+  align-items: center;
+}
+
+.cart_block {
+  width: 200px;
+}
+
+.cart_itemName {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: bold;
+}
+.cart_price {
+  margin: 0;
+}
+
+.cart_stock {
+  font-size: 1.5rem;
+  margin-left: 5rem;
 }
