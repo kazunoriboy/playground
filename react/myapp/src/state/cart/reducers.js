@@ -13,7 +13,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case types.ADD_ITEM:
-            const { id, name, price } = action.payloaad;
+            const { id, name, price } = action.payload;
             let newCart = [];
             const isExistItem = checkExistItem(state.cart, id);
 

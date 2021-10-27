@@ -8,7 +8,7 @@ export const filterCartItem = (cart, id) => {
 
 export const sortCartItems = (cart) => {
     return cart.slice().sort((a, b) => {
-        return a.id = b.id;
+        return a.id - b.id;
     });
 };
 
