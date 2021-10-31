@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 
 const App = () => {
   console.log('renders <App />');
@@ -57,7 +57,7 @@ const AddButton = ({ disabled, onClick }) => {
   );
 };
 
-const Total = ({ cartItems }) => {
+const Total = memo(({ cartItems }) => {
   console.log('renders <Total />');
 
   const total = useMemo(() => {
@@ -72,7 +72,7 @@ const Total = ({ cartItems }) => {
   }, [cartItems]);
 
   return <p>合計： {total}円</p>;
-};
+});
 
 export default App;
 
