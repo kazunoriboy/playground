@@ -25,7 +25,7 @@ const App = () => {
       <AddButton disabled={item.trim() === ''} onClick={handleAdd} />
       <ul>
         {cartItems.map((item) => (
-          <li>{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>
