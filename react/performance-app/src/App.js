@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 
 const App = () => {
   console.log('renders <App />');
@@ -6,17 +6,21 @@ const App = () => {
   const [item, setItem] = useState('');
   const [cartItems, setCartItems] = useState([]);
 
-  const handleChange = (event) => {
+  const handleChange = useCallback((event) => {
     setItem(event.target.value);
-  };
+  }, []);
   
-  const handleAdd = () => {
+  const handleAdd = useCallback(() => {
     if (cartItems.includes(item)) {
       return;
     }
-  setCartItems((items) => [...items, item]);
-  setItem('');
-  };
+    setCartItems((items) => [...items, item]);
+    setItem('');
+  }, [cartItems, item]);
+
+  const handleClear = useCallback(() => {
+    setCartItems([]);
+  });
 
   return (
     <div style={{ margin: '10px' }}>
@@ -29,6 +33,7 @@ const App = () => {
         ))}
       </ul>
       <Total cartItems={cartItems} />
+      <ClearButton onClick={handleClear} />
     </div>
   );
 };
@@ -73,6 +78,16 @@ const Total = memo(({ cartItems }) => {
 
   return <p>合計： {total}円</p>;
 });
+
+const ClearButton = memo(({ onClick }) => {
+  console.log('renders <ClearButton />');
+
+  return (
+    <p>
+      <button onClick={onClick}>カートを空にする</button>
+    </p>
+  )
+})
 
 export default App;
 
