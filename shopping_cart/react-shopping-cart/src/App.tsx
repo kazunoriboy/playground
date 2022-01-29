@@ -20,6 +20,8 @@ const getProducts = async (): Promise<CartItemType[]> =>
   await(await fetch('https://fakestoreapi.com/products')).json();
 
 const App = () => {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([] as CartItemType[]);
   const { data, isLoading, error } = useQuery<CartItemType[]>(
     'products',
     getProducts
@@ -28,14 +30,29 @@ const App = () => {
 
   const getTotalItems = () => null;
 
-  const handleAddToCart = () => null;
+  const handleAddToCart = (clickedItem: CartItemType) => null;
 
   const handleRemoveFromCart = () => null;
 
   if (isLoading) return <LinearProgress />;
   if (error) return <div>somthing went wrong</div>
   
-  return <div className="App">start</div>;
+  return (
+    <Wrapper>
+      <StyledButton onClick={() => setCartOpen(true)}>
+        <Badge badgeContent={getTotalItems(cartItems)} color='error'>
+          <AddShoppingCartIcon />
+        </Badge>
+      </StyledButton>
+      <Grid container spacing={3}>
+        {data?.map(item => (
+          <Grid item key={item.id} xs={12} sm={4}>
+            <Item item={item} handleAddToCart={handleAddToCart}></Item>
+          </Grid>
+        ))}
+      </Grid>
+    </Wrapper>
+  )
 };
 
 export default App;
