@@ -44,3 +44,9 @@ const getCurrentTime = () => new Date();
 const clear = () => console.clear();
 const log = message => console.log(message);
 
+const serealizeClockTime = date => ({
+  hours: date.getHours(),
+  minutes: date.getMinutes(),
+  second: date.getSeconds()
+});
+
