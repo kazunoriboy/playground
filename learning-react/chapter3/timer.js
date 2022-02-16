@@ -86,3 +86,19 @@ const doubleDigits = civilianTime =>
     prependZero("minutes"),
     prependZero("seconds")
   )(civilianTime);
+
+const startTicking = () =>
+  setInterval(
+    compose(
+      clear,
+      getCurrentTime,
+      serealizeClockTime,
+      convertToCivilianTime,
+      doubleDigits,
+      formatClock,
+      display(log)
+    ),
+    oneSecond()
+  );
+
+startTicking();
