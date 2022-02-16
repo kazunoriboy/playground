@@ -73,4 +73,9 @@ const prependZero = key => clockTime => ({
   ...clockTime,
   [key]: clockTime[key] < 10 ? "0" + clockTime[key] : "" + clockTime[key]
 });
-    
+
+const convertToCivilianTime = clockTime =>
+  compose(
+    appendAMPM,
+    civilianHours
+  )(clockTime);
