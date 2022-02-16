@@ -38,3 +38,6 @@
   
 //   return time.hours + ":" + time.minutes + ":" + time.seconds + " " + time.ampm;
 // }
+
+const oneSecond = () => 1000;
+const getCurrentTime = () => new Date();
