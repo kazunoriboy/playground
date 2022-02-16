@@ -69,3 +69,8 @@ const formatClock = format => time =>
     .replace("ss", time.seconds)
     .replace("tt", time.ampm);
 
+const prependZero = key => clockTime => ({
+  ...clockTime,
+  [key]: clockTime[key] < 10 ? "0" + clockTime[key] : "" + clockTime[key]
+});
+    
