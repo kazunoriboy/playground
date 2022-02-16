@@ -50,3 +50,7 @@ const serealizeClockTime = date => ({
   second: date.getSeconds()
 });
 
+const civilianHours = clockTime => ({
+  ...clockTime,
+  hours: clockTime.hours > 12 ? clockTime.hours - 12 : clockTime.hours
+});
