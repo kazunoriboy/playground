@@ -79,3 +79,10 @@ const convertToCivilianTime = clockTime =>
     appendAMPM,
     civilianHours
   )(clockTime);
+
+const doubleDigits = civilianTime => 
+  compose(
+    prependZero("hours"),
+    prependZero("minutes"),
+    prependZero("seconds")
+  )(civilianTime);
