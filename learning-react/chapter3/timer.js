@@ -62,3 +62,10 @@ const appendAMPM = clockTime => ({
 
 const display = target => time => target(time);
 
+const formatClock = format => time => 
+  format
+    .replace("hh", time.hours)
+    .replace("mm", time.minutes)
+    .replace("ss", time.seconds)
+    .replace("tt", time.ampm);
+
