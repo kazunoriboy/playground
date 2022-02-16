@@ -60,3 +60,5 @@ const appendAMPM = clockTime => ({
   ampm: clockTime.hours >= 12 ? "PM" : "AM"
 });
 
+const display = target => time => target(time);
+
