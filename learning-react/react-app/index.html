@@ -11,51 +11,28 @@
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script>
     const items = [
-        "2 lb salmon",
-        "5 sprigs fresh resemary",
-        "2 tablespoons olive oil",
-        "2 small lemons",
-        "1 teaspoon kosher salt",
-        "4 cloves of chopped garlic"
+        "1 cup unsalted butter",
+        "1 cup crunchy peanut butter",
+        "1 cup brown sugar",
+        "1 cup white sugar",
+        "2 eggs",
+        "2.5 cups all purpose flour",
+        "1 teaspoon baking powder",
+        "0.5 teaspoon salt"
     ];
-    const page = React.createElement(
-      "section",
-      { id: "baked-salmon" },
-      React.createElement("h1", null, "Baked Salmon"),
-      React.createElement(
+
+    function IngredientsList() {
+      return React.createElement(
         "ul",
         { className: "ingredients" },
-        items.map((ingredient, i) =>  React.createElement("li", { key: i }, ingredient))
-      ),
-      React.createElement(
-        "section",
-        { className: "instructions" },
-        React.createElement("h2", null, "Cooking Instructions"),
-        React.createElement("p", null, "Preheat the oven to 375 degrees."),
-        React.createElement("p", null, "Lightly coat aluminum foil with oil."),
-        React.createElement("p", null, "Place salmon on foil."),
-        React.createElement(
-          "p",
-          null,
-          "Cover with rosemary, sliced lemons, chopped garlic."
-        ),
-        React.createElement(
-          "p",
-          null,
-          "Bake for 15-20 minutes until cooked through."
-        ),
-        React.createElement("p", null, "Remove from oven.")
-      )
-    );
+        items.map((ingredient, i) => React.createElement("li", { key: i }, ingredient))
+      );
+    }
 
-    // const dish = React.createElement("h1", null, "Baked Salmon");
-    // const dessert = React.createElement("h2", null, "Coconut Cream Pie");
-    // const list = React.createElement(
-    //   "ul",
-    //   null,
-    // );
-    // console.log(list);
-    ReactDOM.render(page, document.getElementById("root"));
-  // </script>
+    ReactDOM.render(
+      React.createElement(IngredientsList, { items }, null),
+      document.getElementById("root")
+    );
+  </script>
 </body>
 </html>
