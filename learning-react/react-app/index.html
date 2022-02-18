@@ -12,8 +12,18 @@
   <script>
     const dish = React.createElement("h1", null, "Baked Salmon");
     const dessert = React.createElement("h2", null, "Coconut Cream Pie");
+    const list = React.createElement(
+      "ul",
+      null,
+      React.createElement("li", null, "2 lb salmon"),
+      React.createElement("li", null, "5 sprigs fresh resemary"),
+      React.createElement("li", null, "2 tablespoons olive oil"),
+      React.createElement("li", null, "2 small lemons"),
+      React.createElement("li", null, "1 teaspoon kosher salt"),
+      React.createElement("li", null, "4 cloves of chopped garlic")
+    );
 
-    ReactDOM.render([dish, dessert], document.getElementById("root"));
+    ReactDOM.render([dish, dessert, list], document.getElementById("root"));
   </script>
 </body>
 </html>
