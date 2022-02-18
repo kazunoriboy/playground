@@ -10,6 +10,14 @@
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script>
+    const items = [
+        "2 lb salmon",
+        "5 sprigs fresh resemary",
+        "2 tablespoons olive oil",
+        "2 small lemons",
+        "1 teaspoon kosher salt",
+        "4 cloves of chopped garlic"
+    ];
     const page = React.createElement(
       "section",
       { id: "baked-salmon" },
@@ -17,12 +25,7 @@
       React.createElement(
         "ul",
         { className: "ingredients" },
-        React.createElement("li", null, "2 lb salmon"),
-        React.createElement("li", null, "5 sprigs fresh resemary"),
-        React.createElement("li", null, "2 tablespoons olive oil"),
-        React.createElement("li", null, "2 small lemons"),
-        React.createElement("li", null, "1 teaspoon kosher salt"),
-        React.createElement("li", null, "4 cloves of chopped garlic")
+        items.map((ingredient, i) =>  React.createElement("li", { key: i }, ingredient))
       ),
       React.createElement(
         "section",
