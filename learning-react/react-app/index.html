@@ -54,14 +54,7 @@
             <h1>{props.title}</h1>
           </header>
           <div class="recipes">
-            {props.recipes.map((recipe, i) => (
-              <Recipe
-                key={i}
-                name={recipe.name}
-                ingredients={recipe.ingredients}
-                steps={recipes.steps}
-              />
-            ))}
+            {props.recipes.map((recipe, i) => <Recipe key={i} {...recipe} />)}
           </div>
         </article>
       );
