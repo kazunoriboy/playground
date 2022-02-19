@@ -48,13 +48,22 @@
       }
     ];
     function Menu(props) {
+    function Recipe(props) {
+      return (
+        <section></section>
+      )
+    }
+
+    function Menu({ title, recipes }) {
       return (
         <article>
           <header>
-            <h1>{props.title}</h1>
+            <h1>{title}</h1>
           </header>
-          <div class="recipes">
-            {props.recipes.map((recipe, i) => <Recipe key={i} {...recipe} />)}
+          <div className="recipes">
+            {recipes.map((recipe, i) => (
+              <Recipe key={i} {...recipe} />
+            ))}
           </div>
         </article>
       );
