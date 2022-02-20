@@ -7,7 +7,6 @@ const Star = ({ selected = false, onSelect = f => f }) => (
 
 export default function StarRating({ totalStars = 5 }) {
   const [selectedStars, setSelectedStars] = useState(0);
-  console.log(setSelectedStars);
   return (
     <>
       {[...Array(totalStars)].map((n, i) => (
