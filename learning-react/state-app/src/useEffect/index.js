@@ -1,20 +1,32 @@
 import React, { useEffect } from "react";
 
-function Checkbox() {
-  const [checked, setChecked] = useState(false);
+function App() {
+  const [val, set] = useState("");
+  const [phrase, setPhrase] = useSate("example phrase");
+
+  const createPhrase = () => {
+    setPhrase(val);
+    set("");
+  };
 
   useEffect(() => {
-    alert(`checked: ${checked.toString()}`);
+    console.log(`typing "${val}"`);
+  });
+
+  useEffect(() => {
+    console.log(`saved phrase: "${phrase}"`);
   });
 
   return (
     <>
+      <label>Favorite Phrase</label>
       <input
-        type="chckbox"
-        value={checked}
-        onChange={() => setChecked(checked => !checked)}
+        type="text"
+        value={val}
+        placeholder={phrase}
+        onChange={e => set(e.target.value)}
       />
-      {checked ? "checked" : "not checked"}
+      <button onClick={createPhrase}>send</button>
     </>
   );
 }
