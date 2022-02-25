@@ -11,7 +11,11 @@ function App() {
 
   useEffect(() => {
     console.log("either val or phrase has changed");
-  }, [val, phrase])
+  }, [val, phrase]);
+
+  useEffect(() => {
+    console.log("only once after initial render");
+  }, []);
 
   useEffect(() => {
     console.log(`typing "${val}"`);
