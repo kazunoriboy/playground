@@ -10,6 +10,10 @@ function App() {
   };
 
   useEffect(() => {
+    console.log("either val or phrase has changed");
+  }, [val, phrase])
+
+  useEffect(() => {
     console.log(`typing "${val}"`);
   }, [val]);
 
