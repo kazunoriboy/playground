@@ -11,11 +11,11 @@ function App() {
 
   useEffect(() => {
     console.log(`typing "${val}"`);
-  });
+  }, [val]);
 
   useEffect(() => {
     console.log(`saved phrase: "${phrase}"`);
-  });
+  }, [phrase]);
 
   return (
     <>
