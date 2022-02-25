@@ -7,5 +7,12 @@ const useJazzyNews = () => {
   useEffect(() => {
     newsFeed.subscribe(addPost);
     return () => newsFeed.unsubscribe(addPost);
-  });
+  }, []);
+
+  useEffect(() => {
+    welcomeChime.play();
+    return () => goodbyeChime.play();
+  }, []);
+
+  return posts;
 }
