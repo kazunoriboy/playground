@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 // const useJazzyNews = () => {
 //   const [posts, setPosts] = useState([]);
@@ -39,13 +39,36 @@ const useAnyKeyToRender = () => {
   })
 }
 
-const word = ["sick", "powder", "day"];
-export function App() {
+// const word = ["sick", "powder", "day"];
+// export function App() {
+//   useAnyKeyToRender();
+
+//   useEffect(() => {
+//     console.log("fresh render");
+//   }, [word]);
+
+//   return <h1>Open the console</h1>;
+// }
+
+function WordCount({ children = "" }) {
   useAnyKeyToRender();
+
+  const words = useMemo(() => children.split(" "), [children]);
 
   useEffect(() => {
     console.log("fresh render");
-  }, [word]);
+  }, [words]);
 
-  return <h1>Open the console</h1>;
+  return (
+    <>
+      <p>{children}</p>
+      <p>
+        <strong>{words.length} - words</strong>
+      </p>
+    </>
+  );
+}
+
+export function App() {
+  return <WordCount>You are not going to believe this but...</WordCount>;
 }
