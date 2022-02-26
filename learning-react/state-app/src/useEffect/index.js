@@ -1,40 +1,40 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 
-const useJazzyNews = () => {
-  const [_posts, setPosts] = useState([]);
-  const addPost = post => setPosts(allPosts => [post, ...allPosts]);
+// const useJazzyNews = () => {
+//   const [_posts, setPosts] = useState([]);
+//   const addPost = post => setPosts(allPosts => [post, ...allPosts]);
 
-  const posts = useMemo(() => _posts, [_posts]);
+//   const posts = useMemo(() => _posts, [_posts]);
 
-  useEffect(() => {
-    newPostChime.play();
-  }, [posts]);
+//   useEffect(() => {
+//     newPostChime.play();
+//   }, [posts]);
 
-  useEffect(() => {
-    newsFeed.subscribe(addPost);
-    return () => newsFeed.unsubscribe(addPost);
-  }, []);
+//   useEffect(() => {
+//     newsFeed.subscribe(addPost);
+//     return () => newsFeed.unsubscribe(addPost);
+//   }, []);
 
-  useEffect(() => {
-    welcomeChime.play();
-    return () => goodbyeChime.play();
-  }, []);
+//   useEffect(() => {
+//     welcomeChime.play();
+//     return () => goodbyeChime.play();
+//   }, []);
 
-  return posts;
-}
+//   return posts;
+// }
 
-function newsFeed({ url }) {
-  const posts = useJazzyNews();
+// function newsFeed({ url }) {
+//   const posts = useJazzyNews();
 
-  return (
-    <>
-      <h1>{posts.length} articles</h1>
-      {posts.map(post => (
-        <Post key={post.id} {...post} />
-      ))}
-    </>
-  )
-}
+//   return (
+//     <>
+//       <h1>{posts.length} articles</h1>
+//       {posts.map(post => (
+//         <Post key={post.id} {...post} />
+//       ))}
+//     </>
+//   )
+// }
 
 // const useAnyKeyToRender = () => {
 //   const [, forceRender] = useState();
