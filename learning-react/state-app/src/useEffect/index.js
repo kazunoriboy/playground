@@ -1,34 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const useJazzyNews = () => {
-  const [posts, setPosts] = useState([]);
-  const addPost = post => setPosts(allPosts => [post, ...allPosts]);
+// const useJazzyNews = () => {
+//   const [posts, setPosts] = useState([]);
+//   const addPost = post => setPosts(allPosts => [post, ...allPosts]);
 
-  useEffect(() => {
-    newsFeed.subscribe(addPost);
-    return () => newsFeed.unsubscribe(addPost);
-  }, []);
+//   useEffect(() => {
+//     newsFeed.subscribe(addPost);
+//     return () => newsFeed.unsubscribe(addPost);
+//   }, []);
 
-  useEffect(() => {
-    welcomeChime.play();
-    return () => goodbyeChime.play();
-  }, []);
+//   useEffect(() => {
+//     welcomeChime.play();
+//     return () => goodbyeChime.play();
+//   }, []);
 
-  return posts;
-}
+//   return posts;
+// }
 
-function NewsFeed({ url }) {
-  const posts = useJazzyNews();
+// function NewsFeed({ url }) {
+//   const posts = useJazzyNews();
 
-  return (
-    <>
-      <h1>{posts.length} articles</h1>
-      {posts.map(post => (
-        <Post key={post.id} {...post} />
-      ))}
-    </>
-  )
-}
+//   return (
+//     <>
+//       <h1>{posts.length} articles</h1>
+//       {posts.map(post => (
+//         <Post key={post.id} {...post} />
+//       ))}
+//     </>
+//   )
+// }
 
 const useAnyKeyToRender = () => {
   const [, forceRender] = useState();
@@ -39,12 +39,13 @@ const useAnyKeyToRender = () => {
   })
 }
 
-function App() {
+const word = ["sick", "powder", "day"];
+export function App() {
   useAnyKeyToRender();
 
   useEffect(() => {
     console.log("fresh render");
-  });
+  }, [word]);
 
   return <h1>Open the console</h1>;
 }
