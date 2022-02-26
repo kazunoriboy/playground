@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 
 // const useJazzyNews = () => {
 //   const [posts, setPosts] = useState([]);
@@ -50,14 +50,21 @@ const useAnyKeyToRender = () => {
 //   return <h1>Open the console</h1>;
 // }
 
+
 function WordCount({ children = "" }) {
   useAnyKeyToRender();
 
   const words = useMemo(() => children.split(" "), [children]);
 
+  const fn = useCallback(() => {
+    console.log("hello");
+    console.log("world");
+  }, []);
+  
   useEffect(() => {
     console.log("fresh render");
-  }, [words]);
+    fn();
+  }, [fn]);
 
   return (
     <>
@@ -72,3 +79,4 @@ function WordCount({ children = "" }) {
 export function App() {
   return <WordCount>You are not going to believe this but...</WordCount>;
 }
+
