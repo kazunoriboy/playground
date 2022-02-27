@@ -30,7 +30,10 @@ const firstUser = {
 };
 
 function User() {
-  const [user, setUser] = useState(firstUser);
+  const [user, setUser] = useReducer(
+    (user, newDetails) => ({ ...user, ...newDetails }),
+    firstUser
+  );
 
   return (
     <div>
@@ -43,7 +46,7 @@ function User() {
       </p>
       <button
         onClick={() => {
-          setUser({ ...user, admin: true });
+          setUser({ admin: true });
         }}
       >
         Make Admin
