@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 
 function CheckBox() {
-  const [checked, setChecked] = useState(false);
+  const [checked, toggle] = useReducer(checked => !checked, false);
 
   function toggle() {
     setChecked(checked => !checked)
