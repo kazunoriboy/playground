@@ -1,9 +1,9 @@
 import React, { useState, memo } from "react";
 
-const Cat = ({ name }) => {
+const Cat = memo(({ name, meow = f => f }) => {
   console.log(`rendering ${name}`);
-  return <p>{name}</p>;
-};
+  return <p onClick={() => meow(name)}>{name}</p>;
+});
 
 const PureCat = memo(Cat);
 
@@ -12,7 +12,7 @@ export function App() {
   return (
     <>
       {cats.map((name, i) => (
-        <PureCat key={i} name={name} />
+        <PureCat key={i} name={name} meow={name => console.log(`${name} has meowed`)} />
       ))}
       <button onClick={() => setCats([...cats, prompt("Name a cat")])}>
         Add a Cat
