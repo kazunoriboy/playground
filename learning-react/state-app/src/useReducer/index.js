@@ -41,7 +41,14 @@ function User() {
       <p>
         Location: {user.city}, {user.state}
       </p>
-      <button>Make Admin</button>
+      <button
+        onClick={() => {
+          setUser({ admin: true });
+        }}
+      >
+        Make Admin
+      </button>
     </div>
   );
 }
+
