@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import ColorProvider from './ColorProvider';
 import { render } from 'react-dom';
-import { App } from './useLayoutEffect/index';
+import { App } from './Performance/index';
 
 export const ColorContext = createContext();
 render(
