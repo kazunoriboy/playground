@@ -39,5 +39,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      fetch(`https://api.github.com/users/kazunoriboy`)
+        .then(response => response.json())
+        .then(console.log)
+        .catch(console.error);
+    </script>
   </body>
 </html>
