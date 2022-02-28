@@ -67,6 +67,13 @@
         method: "POST",
         body: formData
       });
+
+      fetch(`https://api.github.com/users/${login}`, {
+        medhot: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
     </script>
   </body>
 </html>
