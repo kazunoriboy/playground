@@ -52,6 +52,11 @@
         }
       }
       requestGithubUser('kazunoriboy');
+
+      fetch("/create/user", {
+        medhot: "POST",
+        body: JSON.stringify({ username, password, bio })
+      });
     </script>
   </body>
 </html>
