@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+const loadJSON = key => 
+  key && JSON.parse(localStorage.getItem(key));
+
+const saveJSON = (key, data) => 
+  localStorage.setItem(key, JSON.stringify(data));
+
 function GitHubUser({ login }) {
   const [data, setData] = useState();
 
