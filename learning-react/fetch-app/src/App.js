@@ -8,20 +8,6 @@ const saveJSON = (key, data) => {
 }
 
 function GitHubUser({ login }) {
-  const [data, setData] = useState(
-    loadJSON(`user:${login}`)
-  );
-
-  useEffect(() => {
-    if (!data) return;
-    const { name, avatar_url, location } = data;
-    saveJSON(`user:${login}`, {
-      name,
-      login,
-      avatar_url,
-      location
-    });
-  }, [data]);
 
   useEffect(() => {
     if (!login) return;
@@ -32,10 +18,6 @@ function GitHubUser({ login }) {
       .catch(console.error);
     }, [login]);
 
-  if (data) {
-    return <pre>{JSON.stringify(data, null, 2)}</pre>;
-  }
-  return null;
 }
 
 export default function App() {
