@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useFetch } from "./Fetch";
-import SearchForm from "./SearchForm";
+import Fetch from "./Fetch";
 
 const loadJSON = key => 
   key && JSON.parse(localStorage.getItem(key));
@@ -10,13 +9,15 @@ const saveJSON = (key, data) => {
 }
 
 function GitHubUser({ login }) {
-  const { loading, data, error } = useFetch(
-    `https://api.github.com/users/${login}`
-  );
+  return (
+    <Fetch
+      uri={`https://api.github.com/users/${login}`}
+      renderSuccess={UserDetails}
+    />
+  )
+}
 
-  if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>
-  if (loading) return <h1>loading...</h1>;
-
+function UserDetails({ data }) {
   return (
     <div className="githubUser">
       <img
@@ -37,10 +38,7 @@ export default function App() {
   const [login, setLogin] = useState("kazunoriboy");
 
   return (
-    <>
-      <SearchForm value={login} onSearch={setLogin} />
-      <GitHubUser login={login} />
-    </>
+    <GitHubUser login={login} />
   )
 }
 
