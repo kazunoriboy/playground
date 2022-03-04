@@ -2,18 +2,6 @@ import React from "react";
 import { FixedSizeList } from "react-window";
 import { faker } from "@faker-js/faker";
 
-function List({ data = [], renderItem, renderEmpty }) {
-  return !data.length ? (
-    renderEmpty
-  ) : (
-    <ul>
-      {data.map((item, i) => (
-        <li key={i}>{renderItem(item)}</li>
-      ))}
-    </ul>
-  );
-}
-
 const bigList = [...Array(5000)].map(() => ({
   name: faker.name.findName(),
   email: faker.internet.email(),
@@ -21,20 +9,27 @@ const bigList = [...Array(5000)].map(() => ({
 }));
 
 export default function App() {
-  const renderItem = item => (
-    <div style={{ display: "flex" }}>
-      <img src={item.avatar} alt={item.name} width={50} />
+  const renderRow = ({ index, style }) => (
+    <div style={{ ...style, ...{ display: "flex" } }}>
+      <img
+        src={bigList[index].avatar}
+        alt={bigList[index].name}
+        width={50}
+      />
       <p>
-        {item.name} - {item.email}
+        {bigList[index].name} - {bigList[index].email}
       </p>
     </div>
   );
 
   return (
-    <List
-      data={bigList}
-      renderEmpty={<p>This list is empty</p>}
-      renderItem={renderItem}
-    />
+    <FixedSizeList
+      height={window.innerHeight}
+      width={window.innerWidth - 20}
+      itemCount={bigList.length}
+      itemSize={50}
+    >
+      {renderRow}
+    </FixedSizeList>
   );
 }
