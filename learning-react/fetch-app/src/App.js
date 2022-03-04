@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useFetch } from "./useFetch";
+import SearchForm from "./SearchForm";
 
 const loadJSON = key => 
   key && JSON.parse(localStorage.getItem(key));
@@ -33,6 +34,13 @@ function GitHubUser({ login }) {
 }
 
 export default function App() {
-  return <GitHubUser login="kazunoriboy" />
+  const [login, setLogin] = useState("kazunoriboy");
+
+  return (
+    <>
+      <SearchForm value={login} onSearch={setLogin} />
+      <GitHubUser login={login} />
+    </>
+  )
 }
 
