@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useIterator } from "./Iterator";
+import { useIterator } from "./hooks";
 
 export function RepoMenu({
   repositories,
