@@ -29,5 +29,5 @@ export default function RepositoryReadme({ repo, login }) {
   if (loading)
     return <p>Loading...</p>
   
-  return <ReactMarkdown source={markdown} />;
+  return <ReactMarkdown children={markdown} />;
 }
