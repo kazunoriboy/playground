@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import UserRepositories from "./UserRepositories";
 import SearchForm from "./SearchForm"; 
 import GitHubUser from "./GitHubUser";
-
-const loadJSON = key => 
-  key && JSON.parse(localStorage.getItem(key));
-
-const saveJSON = (key, data) => {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-
 function UserDetails({ data }) {
   return (
     <div className="githubUser">
