@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Fetch from "./Fetch";
 import UserRepositories from "./UserRepositories";
 import SearchForm from "./SearchForm"; 
+import GitHubUser from "./GitHubUser";
 
 const loadJSON = key => 
   key && JSON.parse(localStorage.getItem(key));
@@ -10,14 +10,6 @@ const saveJSON = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-function GitHubUser({ login }) {
-  return (
-    <Fetch
-      uri={`https://api.github.com/users/${login}`}
-      renderSuccess={UserDetails}
-    />
-  )
-}
 
 function UserDetails({ data }) {
   return (
