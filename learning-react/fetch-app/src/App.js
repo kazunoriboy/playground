@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Fetch from "./Fetch";
 import UserRepositories from "./UserRepositories";
 import SearchForm from "./SearchForm"; 
@@ -32,9 +32,6 @@ function UserDetails({ data }) {
         {data.name && <p>{data.name}</p>}
         {data.location && <p>{data.location}</p>}
       </div>
-      <UserRepositories
-        login={data.login}
-      />
     </div>
   );
 }
