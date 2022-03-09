@@ -3,7 +3,7 @@ import Fetch from "./Fetch";
 import { RepoMenu } from "./RepoMenu";
 
 export default function UserRepositories({
-  login,
+  login
 }) {
   return (
     <Fetch
@@ -11,6 +11,7 @@ export default function UserRepositories({
       renderSuccess={({ data }) => (
         <RepoMenu
           repositories={data}
+          login={login}
         />
       )}
     />
