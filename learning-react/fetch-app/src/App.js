@@ -34,7 +34,6 @@ function UserDetails({ data }) {
       </div>
       <UserRepositories
         login={data.login}
-        onSelect={repoName => console.log(`${repoName} selected`)}
       />
     </div>
   );
