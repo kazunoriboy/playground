@@ -3,7 +3,8 @@ import Fetch from "./Fetch";
 import { RepoMenu } from "./RepoMenu";
 
 export default function UserRepositories({
-  login
+  login,
+  onSelect = f => f
 }) {
   return (
     <Fetch
@@ -12,6 +13,7 @@ export default function UserRepositories({
         <RepoMenu
           repositories={data}
           login={login}
+          onSelect={onSelect}
         />
       )}
     />
