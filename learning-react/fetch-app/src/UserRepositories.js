@@ -4,6 +4,7 @@ import { RepoMenu } from "./RepoMenu";
 
 export default function UserRepositories({
   login,
+  repo,
   onSelect = f => f
 }) {
   return (
@@ -12,7 +13,7 @@ export default function UserRepositories({
       renderSuccess={({ data }) => (
         <RepoMenu
           repositories={data}
-          login={login}
+          selected={repo}
           onSelect={onSelect}
         />
       )}
