@@ -5,19 +5,23 @@ import UserRepositories from "./UserRepositories";
 import RepositoryReadme from "./RepositoryReadme";
 
 export default function App() {
-  const [login, setLogin] = useState("kazunoriboy");
-  const [repo, setRepo] = useState("playground");
+  const [login, setLogin] = useState();
+  const [repo, setRepo] = useState();
 
   return (
     <>
       <SearchForm value={login} onSearch={setLogin} />
-      <GitHubUser login={login} />
-      <UserRepositories 
-        login={login}
-        selectedRepo={repo}
-        onSelect={setRepo}
-      />
-      <RepositoryReadme login={login} repo={repo} />
+      {login && <GitHubUser login={login} />}
+      {login && (
+        <UserRepositories 
+          login={login}
+          selectedRepo={repo}
+          onSelect={setRepo}
+        />
+      )}
+      {login && repo && (
+        <RepositoryReadme login={login} repo={repo} />
+      )}
     </>
   );
 }
