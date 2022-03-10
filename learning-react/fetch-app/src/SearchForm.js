@@ -17,7 +17,6 @@ export default function SearchForm({
         type="text"
         {...searchProps}
         placeholder="login id..."
-        required
       />
       <button>Search</button>
     </form>
