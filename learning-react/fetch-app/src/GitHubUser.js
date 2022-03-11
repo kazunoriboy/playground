@@ -1,7 +1,7 @@
 import React from "react";
 import Fetch from "./Fetch";
 
-function UserDetails({ data }) {
+export function UserDetails({ data }) {
   return (
     <div className="githubUser">
       <img
@@ -18,7 +18,7 @@ function UserDetails({ data }) {
   );
 }
 
-export default function GitHubUser({ login }) {
+export function GitHubUser({ login }) {
   return (
     <Fetch
       uri={`https://api.github.com/users/${login}`}

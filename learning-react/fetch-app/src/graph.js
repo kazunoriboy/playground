@@ -29,5 +29,5 @@ const client = new GraphQLClient(
 client
   .request(query, { login: "moontahoe" })
   .then(results => JSON.stringify(results, null, 2))
-  .then(consolo.log)
+  .then(console.log)
   .then(console.error);
