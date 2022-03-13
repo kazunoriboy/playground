@@ -4,6 +4,10 @@ const Callout = ({ children }) => (
   <div className="callout">{children}</div>
 );
 
+const BreakThings = () => {
+  throw new Error("We intentionally broke something");
+}
+
 function App() {
   return (
     <SiteLayout menu={<p>Menu</p>}>
