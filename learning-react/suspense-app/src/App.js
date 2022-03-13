@@ -1,23 +1,12 @@
-import SiteLayout from './SiteLayout';
-
-const Callout = ({ children }) => (
-  <div className="callout">{children}</div>
-);
-
-const BreakThings = () => {
-  throw new Error("We intentionally broke something");
-}
+import React, { useState } from "react";
+import Agreement from "./Agreement";
+import Main from "./Main";
 
 function App() {
-  return (
-    <SiteLayout menu={<p>Menu</p>}>
-      <>
-        <Callout>Callout</Callout>
-        <h1>Contents</h1>
-        <p>This is the main part of the exmaple layout</p>
-      </>
-    </SiteLayout>
-  );
+  const [agree, setAgree] = useState(false);
+  if (!agree) return <Agreement onAgree={() => setAgree(true)} />;
+
+  return <Main />;
 }
 
 export default App;
