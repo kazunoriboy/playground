@@ -1,14 +1,17 @@
 import React, { useState, Suspense, lazy } from "react";
 import Agreement from "./Agreement";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import GridLoader from "react-spinners/GridLoader";
 import ErrorBoundary from "./ErrorBoundary";
 import Status from "./Status";
 
 function App() {
   return (
-    <ErrorBoundary>
-      <Status />
-    </ErrorBoundary>
+    <Suspense fallback={<GridLoader />}>
+      <ErrorBoundary>
+        <Status />
+      </ErrorBoundary>
+    </Suspense>
   );
 }
 

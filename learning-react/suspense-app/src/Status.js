@@ -1,7 +1,7 @@
 import React from "react";
 
 const loadStatus = () => {
-  throw new Error("something went wrong");
+  throw new Promise(resolves => null);
 };
 
 export default function Status() {
