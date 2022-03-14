@@ -1,6 +1,8 @@
 import React from "react";
 
-const loadStatus = () => "success - ready";
+const loadStatus = () => {
+  throw new Error("something went wrong");
+};
 
 export default function Status() {
   const status = loadStatus();
