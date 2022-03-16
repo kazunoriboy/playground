@@ -10,7 +10,7 @@ function App({ item }: AppProps) {
   return (
     <div>
       <h1>{fabricColor} {item}</h1>
-      <button onClick={() => setFabricColor(3)}>Make the jacket Blue</button>
+      <button onClick={() => setFabricColor("blue")}>Make the jacket Blue</button>
     </div>
   );
 }
