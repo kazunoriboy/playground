@@ -5,10 +5,10 @@ type AppProps = {
   item: string;
 };
 
-function App(props: AppProps) {
+function App({ item }: AppProps) {
   return (
     <div>
-      <h1>{props.item}</h1>
+      <h1>{item}</h1>
     </div>
   );
 }
