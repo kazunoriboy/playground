@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 type AppProps = {
@@ -6,15 +6,17 @@ type AppProps = {
 };
 
 function App({ item }: AppProps) {
+  const [fabricColor, setFabricColor] = useState("purple");
   return (
     <div>
-      <h1>{item}</h1>
+      <h1>{fabricColor} {item}</h1>
+      <button onClick={() => setFabricColor(3)}>Make the jacket Blue</button>
     </div>
   );
 }
 
 ReactDOM.render(
-  <App item={1} />,
+  <App item="jacket" />,
   document.getElementById("root")
 );
 
