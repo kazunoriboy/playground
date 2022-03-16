@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function App(props) {
+type AppProps = {
+  item: string;
+};
+
+function App(props: AppProps) {
   return (
     <div>
       <h1>{props.item}</h1>
