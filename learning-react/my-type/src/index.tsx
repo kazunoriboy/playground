@@ -14,7 +14,7 @@ function App({ item }: AppProps) {
 }
 
 ReactDOM.render(
-  <App item="jacket" />,
+  <App item={1} />,
   document.getElementById("root")
 );
 
