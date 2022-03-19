@@ -1,4 +1,15 @@
 import { useRoutes } from "react-router-dom";
+import {
+  Home,
+  About,
+  Events,
+  Products,
+  Contact,
+  Whoops404,
+  Services,
+  History,
+  Location,
+} from "./Pages";
 
 function App() {
   let element = useRoutes([
