@@ -1,3 +1,31 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@kazunoriboy 
+oreilly-japan
+/
+learning-react-2e-ja
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+learning-react-2e-ja/chapter-11/11.1/src/index.css
+@kuu
+kuu Add files
+Latest commit ab0546c on Jul 11, 2021
+ History
+ 1 contributor
+34 lines (30 sloc)  639 Bytes
+   
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +39,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  text-align:center;
+  color: rgb(112, 128, 144);
+}
+
+nav {
+  text-align:center;
+  position: absolute;
+  bottom: 20px;
+  bottom: 50px;
+  left: 20px;
+  right: 20px;
+  background-color: rgb(112, 128, 144);
+  padding: 10px;
+}
+
+nav > a {
+  margin: 20px;
+  color: white;
+}
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
