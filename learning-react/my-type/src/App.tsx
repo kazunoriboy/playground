@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import {
   Home,
   About,
@@ -17,6 +17,7 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="services" element={<Navigate to="/about/services" />} />
         <Route path="about" element={<About />}>
           <Route path="services" element={<Services />} />
           <Route path="history" element={<History />} />
