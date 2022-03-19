@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App from "./Color/App";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
