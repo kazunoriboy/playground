@@ -1,22 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-
-type AppProps = {
-  item: string;
-};
-
-function App({ item }: AppProps) {
-  const [fabricColor, setFabricColor] = useState("purple");
-  return (
-    <div>
-      <h1>{fabricColor} {item}</h1>
-      <button onClick={() => setFabricColor("blue")}>Make the jacket Blue</button>
-    </div>
-  );
-}
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <App item="jacket" />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById("root")
 );
-
