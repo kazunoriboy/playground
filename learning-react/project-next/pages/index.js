@@ -1,7 +1,11 @@
+import Layout from "./Layout";
+
 export default function Index() {
   return (
-    <div>
-      <p>Hello everyone!</p>
-    </div>
+    <Layout>
+      <div>
+        <p>Hello everyone!</p>
+      </div>
+    </Layout>
   );
 }
