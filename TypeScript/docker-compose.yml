@@ -1,0 +1,11 @@
+version: '3.8' 
+services: 
+  app: 
+    container_name: react-app-container 
+    image: node:14-alpine
+    volumes:
+      - ./:/app 
+    working_dir: /app
+    ports:
+      - '3000:3000'
+    tty: true
