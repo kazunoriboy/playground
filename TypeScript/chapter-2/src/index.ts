@@ -52,4 +52,5 @@ function numberSample() {
 }
 function bigIntSample() {
   let a = 1234n
+  const b = 5678n
 }
