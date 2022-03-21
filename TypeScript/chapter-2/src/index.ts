@@ -245,4 +245,11 @@ function arraySample() {
   let h: number[] = []
   h.push(1)
   h.push('red')
+
+  function buildArray() {
+    let a = []
+    a.push(1)
+    a.push('x')
+    return a
+  }
 }
