@@ -44,4 +44,5 @@ function boolSample() {
 function numberSample() {
   let a = 1234
   var b = Infinity * 0.10
+  const c = 5678
 }
