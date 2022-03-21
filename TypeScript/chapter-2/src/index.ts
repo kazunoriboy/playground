@@ -145,4 +145,10 @@ function objectSample() {
   user.firstName
   user.firstName = 'abby with an e'
 
+  let danger: {}
+  danger = {}
+  danger = { x: 1 }
+  danger = []
+  danger = 2
+
 }
