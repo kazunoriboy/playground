@@ -35,4 +35,5 @@ function unknownSample() {
 function boolSample() {
   let a = true
   var b = false
+  const c = true
 }
