@@ -252,4 +252,6 @@ function arraySample() {
     a.push('x')
     return a
   }
+  let myArray = buildArray()
+  myArray.push(true)
 }
