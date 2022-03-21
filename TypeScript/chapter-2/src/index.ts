@@ -115,4 +115,18 @@ function objectSample() {
     ) { }
   }
   c = new Person('matt', 'smith')
+
+  let d: {
+    e: number
+    f?: string
+    [key: number]: boolean
+  }
+  d = { e: 1 }
+  d = { e: 1, f: undefined }
+  d = { e: 1, f: 'd' }
+  d = { e: 1, 10: true }
+  d = { e: 1, 10: true, 20: false }
+  d = { 10: true }
+  d = { b: 1, 33: 'red' }
+
 }
