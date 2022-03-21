@@ -40,3 +40,8 @@ function boolSample() {
   let e: true = true
   let f: true = false
 }
+
+function numberSample() {
+  let a = 1234
+  var b = Infinity * 0.10
+}
