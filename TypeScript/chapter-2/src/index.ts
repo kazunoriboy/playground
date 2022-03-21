@@ -234,4 +234,7 @@ function arraySample() {
   let d = [1, 'a']
   const e = [2, 'b']
 
+  let f = ['red']
+  f.push('blue')
+  f.push(true)
 }
