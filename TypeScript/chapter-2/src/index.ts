@@ -325,7 +325,7 @@ function enumSample() {
   let myFirstLanguage = Language.Russian
   let mySecondLanguage = Language['English']
 
-  enum Color {
+  const enum Color {
     Red = '#c10000',
     Blue = '#007ac1',
     Pink = 0xc10050,
