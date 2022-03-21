@@ -305,4 +305,12 @@ function nullUndefinedVoidNeverSample() {
   function d() {
     throw TypeError('I always error')
   }
+
+  function e() {
+    while (true) {
+      doSomething()
+    }
+  }
+
+  function doSomething() { }
 }
