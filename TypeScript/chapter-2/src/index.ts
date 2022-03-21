@@ -340,4 +340,19 @@ function enumSample() {
 
   let c = Color[255]
   let d = Color[6]
+
+  const enum Flippable {
+    Burger,
+    Chair,
+    Cup,
+    Skateboard,
+    Table
+  }
+
+  function flip(f: Flippable) {
+    return 'flipped it'
+  }
+  flip(Flippable.Chair)
+  flip(Flippable.Cup)
+  flip(12)
 }
