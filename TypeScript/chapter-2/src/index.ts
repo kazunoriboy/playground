@@ -231,4 +231,7 @@ function arraySample() {
   let a = [1, 2, 3]
   var b = ['a', 'b']
   let c: string[] = ['a']
+  let d = [1, 'a']
+  const e = [2, 'b']
+
 }
