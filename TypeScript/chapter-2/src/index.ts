@@ -85,7 +85,15 @@ function symbolSample() {
 }
 
 function objectSample() {
-  let a: object = {
-    b: 'x'
+  let a: { b: number } = {
+    b: 12
   }
+  a.b
+
+  let b = {
+    c: {
+      d: 'f'
+    }
+  }
+
 }
