@@ -56,4 +56,5 @@ function bigIntSample() {
   const b = 5678n
   var c = a + b
   let d = a < 1234
+  let e = 88.5n
 }
