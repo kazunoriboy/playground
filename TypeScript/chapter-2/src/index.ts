@@ -136,4 +136,13 @@ function objectSample() {
     '34E': 'Bill Gates'
   }
 
+  let user: {
+    readonly firstName: string
+  } = {
+    firstName: 'abby'
+  }
+
+  user.firstName
+  user.firstName = 'abby with an e'
+
 }
