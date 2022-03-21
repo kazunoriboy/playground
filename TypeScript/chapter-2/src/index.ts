@@ -57,4 +57,6 @@ function bigIntSample() {
   var c = a + b
   let d = a < 1234
   let e = 88.5n
+  let f: bigint = 100n
+  let g: 100n = 100n
 }
