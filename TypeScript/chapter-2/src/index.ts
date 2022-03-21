@@ -314,3 +314,24 @@ function nullUndefinedVoidNeverSample() {
 
   function doSomething() { }
 }
+
+function enumSample() {
+  enum Language {
+    English = 0,
+    Spanish = 1,
+    Russian = 2
+  }
+
+  let myFirstLanguage = Language.Russian
+  let mySecondLanguage = Language['English']
+
+  enum Color {
+    Red = '#c10000',
+    Blue = '#007ac1',
+    Pink = 0xc10050,
+    White = 255
+  }
+
+  let red = Color.Red
+  let pink = Color.Pink
+}
