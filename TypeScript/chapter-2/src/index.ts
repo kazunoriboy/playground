@@ -129,4 +129,11 @@ function objectSample() {
   d = { 10: true }
   d = { b: 1, 33: 'red' }
 
+  let airplaneSeatingAssignments: {
+    [seatNumber: string]: string
+  } = {
+    '34D': 'Boris Cherny',
+    '34E': 'Bill Gates'
+  }
+
 }
