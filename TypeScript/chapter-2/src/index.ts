@@ -71,7 +71,9 @@ function stringSample() {
   let f: 'john' = 'john'
   let g: 'john' = 'zoe'
 }
+
 function symbolSample() {
   let a = Symbol('a')
   let b: symbol = Symbol('b')
+  var c = a === b
 }
