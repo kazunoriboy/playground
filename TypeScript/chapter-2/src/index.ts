@@ -260,4 +260,10 @@ function tupleSample() {
   let a: [number] = [1]
   let b: [string, string, number] = ['malcom', 'gladwell', 1963]
   b = ['queen', 'elixabeth', 'ii', 1926]
+
+  let trainFares: [number, number?][] = [
+    [3.75],
+    [8.25, 7.70]
+    [10.50]
+  ]
 }
