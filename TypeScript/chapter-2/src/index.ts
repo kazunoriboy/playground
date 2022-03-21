@@ -178,3 +178,38 @@ function typeAriasSample() {
     let c: Color = 'red'
   }
 }
+
+function unionAndIntersectionSample() {
+  type Cat = { name: string, purrs: boolean }
+  type Dog = { name: string, barks: boolean, wags: boolean }
+  type CatOrDogOrBoth = Cat | Dog
+  type CatAndDog = Cat & Dog
+
+  // Catのみ
+  let a: CatOrDogOrBoth = {
+    name: 'Bonkers',
+    purrs: true
+  }
+
+  // Dogのみ
+  a = {
+    name: 'Domino',
+    barks: true,
+    wags: true
+  }
+
+  //  両方
+  a = {
+    name: 'Donkers',
+    barks: true,
+    purrs: true,
+    wags: true
+  }
+
+  let b: CatAndDog = {
+    name: 'Domino',
+    barks: true,
+    purrs: true,
+    wags: true
+  }
+}
