@@ -269,4 +269,11 @@ function tupleSample() {
 
   let friends: [string, ...string[]] = ['Sara', 'Tali', 'Chloe', 'Claire']
   let list: [number, boolean, ...string[]] = [1, false, 'a', 'b', 'c']
+
+  let as: readonly number[] = [1, 2, 3]
+  let bs: readonly number[] = as.concat(4)
+  let three = bs[2]
+  as[4] = 5
+
+  as.push(6)
 }
