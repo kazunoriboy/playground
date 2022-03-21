@@ -83,3 +83,9 @@ function symbolSample() {
   let h = e === e
   let i = e === f
 }
+
+function objectSample() {
+  let a: object = {
+    b: 'x'
+  }
+}
