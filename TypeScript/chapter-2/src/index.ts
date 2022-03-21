@@ -212,4 +212,17 @@ function unionAndIntersectionSample() {
     purrs: true,
     wags: true
   }
+
+  type Return = string | null
+
+  function trueOrNull(isTrue: boolean): Return {
+    if (isTrue) {
+      return 'true'
+    }
+    return null
+  }
+
+  function truethy(a: string, b: number) {
+    return a || b
+  }
 }
