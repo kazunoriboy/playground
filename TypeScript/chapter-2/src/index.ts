@@ -31,3 +31,8 @@ function unknownSample() {
     let d = a + 10
   }
 }
+
+function boolSample() {
+  let a = true
+  var b = false
+}
