@@ -255,3 +255,9 @@ function arraySample() {
   let myArray = buildArray()
   myArray.push(true)
 }
+
+function tupleSample() {
+  let a: [number] = [1]
+  let b: [string, string, number] = ['malcom', 'gladwell', 1963]
+  b = ['queen', 'elixabeth', 'ii', 1926]
+}
