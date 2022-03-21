@@ -13,4 +13,10 @@ function squareOf(n: number) {
 }
 
 let r = squareOf(2)
-let r2 = squareOf("3")
+// let r2 = squareOf("3")
+
+function anySample() {
+  let a: any = 666
+  let b: any = ['danger']
+  let c = a + b
+}
