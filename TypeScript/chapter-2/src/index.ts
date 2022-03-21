@@ -242,4 +242,7 @@ function arraySample() {
   g.push(1)
   g.push('red')
 
+  let h: number[] = []
+  h.push(1)
+  h.push('red')
 }
