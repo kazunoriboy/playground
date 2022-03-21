@@ -50,8 +50,10 @@ function numberSample() {
   let f: 26.218 = 26.218
   let g: 26.218 = 10
 }
+
 function bigIntSample() {
   let a = 1234n
   const b = 5678n
   var c = a + b
+  let d = a < 1234
 }
