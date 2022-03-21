@@ -166,4 +166,15 @@ function typeAriasSample() {
     name: 'James May',
     age: age
   }
+
+  type Color = 'red'
+
+  let x = Math.random() < .5
+
+  if (x) {
+    type Color = 'blue'
+    let b: Color = 'blue'
+  } else {
+    let c: Color = 'red'
+  }
 }
