@@ -89,7 +89,11 @@ function objectSample() {
     b: 12
   }
   a.b
-
+  a = {}
+  a = {
+    b: 1,
+    c: 2
+  }
   let b = {
     c: {
       d: 'f'
