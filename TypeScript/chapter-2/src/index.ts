@@ -276,4 +276,11 @@ function tupleSample() {
   as[4] = 5
 
   as.push(6)
+
+  type A = readonly string[]
+  type B = ReadonlyArray<string>
+  type C = Readonly<string[]>
+
+  type D = readonly [number, string]
+  type E = Readonly<[number, string]>
 }
