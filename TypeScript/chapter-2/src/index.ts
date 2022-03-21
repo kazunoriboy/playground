@@ -50,3 +50,6 @@ function numberSample() {
   let f: 26.218 = 26.218
   let g: 26.218 = 10
 }
+function bigIntSample() {
+  let a = 1234n
+}
