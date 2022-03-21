@@ -334,4 +334,10 @@ function enumSample() {
 
   let red = Color.Red
   let pink = Color.Pink
+
+  let a = Color.Red
+  let b = Color.Green
+
+  let c = Color[255]
+  let d = Color[6]
 }
