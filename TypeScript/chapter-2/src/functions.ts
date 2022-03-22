@@ -82,7 +82,22 @@ function* createNumbers(): Generator<number> {
     yield n++
   }
 }
-let numbers = createNumbers()
-numbers.next()
-numbers.next()
-numbers.next()
+// let numbers = createNumbers()
+// numbers.next()
+// numbers.next()
+// numbers.next()
+
+
+let numbers = {
+  *[Symbol.iterator]() {
+    for (let n = 1; n <= 10; n++) {
+      yield n
+    }
+  }
+}
+
+for (let a of numbers) {
+
+}
+let allNumbers = [...numbers]
+let [one, two, ...rest] = numbers
