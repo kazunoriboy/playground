@@ -52,3 +52,10 @@ add(10, 30)
 add.apply(null, [10, 20])
 add.call(null, 10, 30)
 add.bind(null, 10, 39)()
+
+function fancyDate() {
+  return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`
+}
+
+fancyDate.call(new Date)
+fancyDate
