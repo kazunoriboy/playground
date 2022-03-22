@@ -47,3 +47,8 @@ function sumVariadicSafe(...numbers: number[]) {
   return numbers.reduce((total, n) => total + n, 0)
 }
 sumVariadicSafe(1, 3, 5)
+
+add(10, 30)
+add.apply(null, [10, 20])
+add.call(null, 10, 30)
+add.bind(null, 10, 39)()
