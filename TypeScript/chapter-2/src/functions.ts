@@ -26,9 +26,9 @@ greet('Crystal')
 add(1)
 add(1, 'a')
 
-function log(message: string, userId?: string) {
+function log(message: string, userId = "Not signed in") {
   let time = new Date().toLocaleTimeString()
-  console.log(time, message, userId || 'Not signed in')
+  console.log(time, message, userId)
 }
 log('Page loaded')
 log('User signed in', 'da763be')
