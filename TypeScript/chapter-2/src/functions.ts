@@ -32,3 +32,13 @@ function log(message: string, userId = "Not signed in") {
 }
 log('Page loaded')
 log('User signed in', 'da763be')
+
+function sum(numbers: number[]) {
+  return numbers.reduce((total, n) => total + n, 0)
+}
+sum([1, 2, 3])
+
+function sumVariadic(): number {
+  return Array.from(arguments).reduce((total, n) => total + n, 0)
+}
+sumVariadic(1, 2, 4)
