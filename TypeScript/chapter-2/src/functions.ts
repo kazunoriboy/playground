@@ -19,3 +19,9 @@ let greet4 = (name: string) => {
 }
 
 let greet5 = new Function('name', 'return "hellot " + name')
+
+add(1, 3)
+greet('Crystal')
+
+add(1)
+add(1, 'a')
