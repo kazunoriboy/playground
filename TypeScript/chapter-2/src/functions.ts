@@ -114,5 +114,15 @@ let log2: Log = (
   console.log(time, message, userId);
 }
 
-
 type SumVariadicSafe = (...numbers: number[]) => number
+
+function times(
+  f: (index: number) => void,
+  n: (number)
+) {
+  for (let i = 0; i < n; i++) {
+    f(i)
+  }
+}
+
+times(n => console.log(n), 4);
