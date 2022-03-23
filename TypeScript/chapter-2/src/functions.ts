@@ -130,3 +130,18 @@ function times(
 }
 
 times(n => console.log(n), 4);
+
+type Reservation = {
+  id: number
+  name: string
+}
+
+type Reserve = {
+  (from: Date, to: Date, destination: string): Reservation
+  (from: Date, destination: string): Reservation
+}
+
+let reserve: Reserve = (from: Date, toOrDestination: Date | string, destination?: string) => {
+  return { id: 1, name: 'test' }
+}
+
