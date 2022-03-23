@@ -106,6 +106,10 @@ type Greet = (name: string) => string
 
 type Log = (message: string, userId?: string) => void
 
+type Log2 = {
+  (message: string, userId?: string): void
+}
+
 let log2: Log = (
   message,
   userId = 'Not signed in'
