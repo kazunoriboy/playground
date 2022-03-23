@@ -1,3 +1,5 @@
+import { allowedNodeEnvironmentFlags } from "process"
+
 function add(a: number, b: number): number {
   return a + b
 }
@@ -144,4 +146,20 @@ type Reserve = {
 let reserve: Reserve = (from: Date, toOrDestination: Date | string, destination?: string) => {
   return { id: 1, name: 'test' }
 }
+
+type WarnUser = {
+  (warning: string): void
+  wasCalled: boolean
+}
+
+function warnUser(warning: string) {
+  if (warnUser.wasCalled) {
+    return
+  }
+  warnUser.wasCalled = true
+  alert(warning)
+}
+warnUser.wasCalled = false
+
+const assignedWarnUser: WarnUser = warnUser
 
