@@ -101,3 +101,9 @@ for (let a of numbers) {
 }
 let allNumbers = [...numbers]
 let [one, two, ...rest] = numbers
+
+type Greet = (name: string) => string
+
+type Log = (message: string, userId?: string) => void
+
+type SumVariadicSafe = (...numbers: number[]) => number
