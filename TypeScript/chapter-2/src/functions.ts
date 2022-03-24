@@ -178,4 +178,6 @@ filter([1, 2, 3, 5], _ => _ < 3)
 
 type Filter = {
   (array: number[], f: (item: number) => boolean): number[]
+  (array: string[], f: (item: string) => boolean): string[]
 }
+
