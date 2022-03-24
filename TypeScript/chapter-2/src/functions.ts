@@ -179,5 +179,15 @@ filter([1, 2, 3, 5], _ => _ < 3)
 type Filter = {
   (array: number[], f: (item: number) => boolean): number[]
   (array: string[], f: (item: string) => boolean): string[]
+  (array: object[], f: (item: object) => boolean): object[]
 }
 
+let names = [
+  { firstName: 'beth' },
+  { firstName: 'caitlyn' },
+  { firstName: 'xin' },
+]
+let result = filter(
+  names,
+  _ => _.firstName.startsWith('b')
+)
