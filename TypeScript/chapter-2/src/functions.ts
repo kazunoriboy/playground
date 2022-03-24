@@ -177,9 +177,7 @@ let filter: Filter = function (array, f) {
 filter([1, 2, 3, 5], _ => _ < 3)
 
 type Filter = {
-  (array: number[], f: (item: number) => boolean): number[]
-  (array: string[], f: (item: string) => boolean): string[]
-  (array: object[], f: (item: object) => boolean): object[]
+  <T>(array: T[], f: (item: T) => boolean): T[]
 }
 
 let names = [
