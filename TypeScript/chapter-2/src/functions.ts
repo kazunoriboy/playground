@@ -163,3 +163,19 @@ warnUser.wasCalled = false
 
 const assignedWarnUser: WarnUser = warnUser
 
+let filter: Filter = function (array, f) {
+  let result = []
+  for (let i = 0; i < array.length; i++) {
+    let item = array[i]
+    if (f(item)) {
+      result.push(item)
+    }
+  }
+  return result
+}
+
+filter([1, 2, 3, 5], _ => _ < 3)
+
+type Filter = {
+  (array: number[], f: (item: number) => boolean): number[]
+}
