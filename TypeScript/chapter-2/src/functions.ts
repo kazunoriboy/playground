@@ -163,7 +163,7 @@ warnUser.wasCalled = false
 
 const assignedWarnUser: WarnUser = warnUser
 
-let filter: Filter<number> = function (array, f) {
+let filter: Filter1<number> = function (array, f) {
   let result = []
   for (let i = 0; i < array.length; i++) {
     let item = array[i]
@@ -176,6 +176,7 @@ let filter: Filter<number> = function (array, f) {
 
 filter([1, 2, 3, 5], _ => _ < 3)
 filter(['a', 'b'], _ => _ !== 'b')
+filter([{}, {}, {}], _ => true);
 
 // type Filter = {
 //   <T>(array: T[], f: (item: T) => boolean): T[]
@@ -184,6 +185,8 @@ filter(['a', 'b'], _ => _ !== 'b')
 type Filter<T> = {
   (array: T[], f: (item: T) => boolean): T[]
 }
+
+
 
 let names = [
   { firstName: 'beth' },
@@ -195,3 +198,30 @@ let result = filter(
   _ => _.firstName.startsWith('b')
 )
 
+type Filter1 = {
+  <T>(array: T[], f: (item: T) => boolean): T[]
+}
+let filter1: Filter1 = function (array, f) {
+  return array
+}
+
+type Filter2<T> = {
+  (array: T[], f: (item: T) => boolean): T[]
+}
+let filter2: Filter2<number> = function (array, f) {
+  return array
+}
+
+type Filter3 = <T>(array: T[], f: (item: T) => boolean) => T[]
+let filter3: Filter3 = function (array, f) {
+  return array
+}
+
+type Filter4<T> = (array: T[], f: (item: T) => boolean) => T[]
+let filter4: Filter4<number> = function (array, f) {
+  return array
+}
+
+function filter5<T>(array: T[], f: (item: T) => boolean): T[] {
+  return array
+}
