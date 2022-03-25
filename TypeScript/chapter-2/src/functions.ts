@@ -163,7 +163,7 @@ warnUser.wasCalled = false
 
 const assignedWarnUser: WarnUser = warnUser
 
-let filter: Filter = function (array, f) {
+let filter: Filter<number> = function (array, f) {
   let result = []
   for (let i = 0; i < array.length; i++) {
     let item = array[i]
@@ -175,9 +175,14 @@ let filter: Filter = function (array, f) {
 }
 
 filter([1, 2, 3, 5], _ => _ < 3)
+filter(['a', 'b'], _ => _ !== 'b')
 
-type Filter = {
-  <T>(array: T[], f: (item: T) => boolean): T[]
+// type Filter = {
+//   <T>(array: T[], f: (item: T) => boolean): T[]
+// }
+
+type Filter<T> = {
+  (array: T[], f: (item: T) => boolean): T[]
 }
 
 let names = [
@@ -189,3 +194,4 @@ let result = filter(
   names,
   _ => _.firstName.startsWith('b')
 )
+
