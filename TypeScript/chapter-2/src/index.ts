@@ -397,3 +397,6 @@ map<string, boolean>(
   ['a', 'b', 'c'],
   _ => _ === 'a'
 )
+
+let promise = new Promise<number>(resolve => resolve(45))
+promise.then(result => result * 4)
