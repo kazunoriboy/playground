@@ -400,3 +400,21 @@ map<string, boolean>(
 
 let promise = new Promise<number>(resolve => resolve(45))
 promise.then(result => result * 4)
+
+type MyEvent<T> = {
+  target: T
+  type: string
+}
+
+type ButtonEvent = MyEvent<HTMLButtonElement>
+
+let myEvent: MyEvent<HTMLButtonElement | null> = {
+  target: document.querySelector('#myButton'),
+  type: 'click'
+}
+
+type TimedEvent<T> = {
+  event: MyEvent<T>
+  from: Date
+  to: Date
+}
