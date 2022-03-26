@@ -418,3 +418,11 @@ type TimedEvent<T> = {
   from: Date
   to: Date
 }
+
+function triggerEvent<T>(event: MyEvent<T>): void {
+  //
+}
+triggerEvent({
+  target: document.querySelector('#myButton'),
+  type: 'mouseover'
+})
