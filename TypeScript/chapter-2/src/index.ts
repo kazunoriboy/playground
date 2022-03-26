@@ -445,6 +445,12 @@ let a1 = mapNode(a, _ => _.toUpperCase())
 let b1 = mapNode(b, _ => _.toUpperCase())
 let c1 = mapNode(c, _ => _.toUpperCase())
 
-function mapNode<T>(node: T, f: (value: string) => string) {
-
+function mapNode<T extends TreeNode>(
+  node: T,
+  f: (value: string) => string
+): T {
+  return {
+    ...node,
+    value: f(node.value)
+  }
 }
