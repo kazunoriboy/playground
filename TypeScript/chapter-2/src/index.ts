@@ -387,3 +387,13 @@ function map<T, U>(array: T[], f: (item: T) => U): U[] {
   }
   return result
 }
+
+map(
+  ['a', 'b', 'c'],
+  _ => _ === 'a'
+)
+
+map<string, boolean>(
+  ['a', 'b', 'c'],
+  _ => _ === 'a'
+)
