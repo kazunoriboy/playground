@@ -401,14 +401,14 @@ map<string, boolean>(
 let promise = new Promise<number>(resolve => resolve(45))
 promise.then(result => result * 4)
 
-type MyEvent<T = HTMLElement> = {
+type MyEvent<T extends HTMLElement = HTMLElement> = {
   target: T
   type: string
 }
 
 type ButtonEvent = MyEvent<HTMLButtonElement>
 
-let myEvent: MyEvent<HTMLButtonElement | null> = {
+let myEvent: MyEvent = {
   target: document.querySelector('#myButton'),
   type: 'click'
 }
