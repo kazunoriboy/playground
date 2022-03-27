@@ -401,7 +401,7 @@ map<string, boolean>(
 let promise = new Promise<number>(resolve => resolve(45))
 promise.then(result => result * 4)
 
-type MyEvent<T> = {
+type MyEvent<T = HTMLElement> = {
   target: T
   type: string
 }
