@@ -478,4 +478,6 @@ function fill(length: number, value: string): string[] {
   return Array.from({ length }, () => value)
 }
 
-call(fill, 10, 'a')
+let aa = call(fill, 10, 'a')
+let bb = call(fill, 10)
+let cc = call(fill, 10, 'a', 'z')
