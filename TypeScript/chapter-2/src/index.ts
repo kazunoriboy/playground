@@ -406,6 +406,16 @@ type MyEvent<T extends HTMLElement = HTMLElement> = {
   type: string
 }
 
+type MyEvent2<Type extends string, Target extends HTMLElement = HTMLElement> = {
+  target: Target
+  type: Type
+}
+
+type MyEvent3<Target extends HTMLElement = HTMLElement, Type extends string> = {
+  target: Target
+  type: Type
+}
+
 type ButtonEvent = MyEvent<HTMLButtonElement>
 
 let myEvent: MyEvent = {
