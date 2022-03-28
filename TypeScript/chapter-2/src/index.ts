@@ -1,3 +1,5 @@
+import { assert } from "console";
+
 console.log('Hello TypeScript');
 
 function typeInference() {
@@ -491,3 +493,36 @@ function fill(length: number, value: string): string[] {
 let aa = call(fill, 10, 'a')
 let bb = call(fill, 10)
 let cc = call(fill, 10, 'a', 'z')
+
+type Reservation = unknown
+
+type Reserve = {
+  (from: Date, to: Date, destination: string): Reservation
+  (from: Date, destination: string): Reservation
+  (destination: string): Reservation
+}
+
+let Reserve: Reserve = (
+  fromOrDestination: Date | string,
+  toOrDestination: Date | string,
+  destination?: string
+) => {
+  if (
+    fromOrDestination instanceof Date &&
+    toOrDestination instanceof Date &&
+    destination !== undefined
+  ) {
+    // 宿泊予約
+    return
+  } else if (
+    fromOrDestination instanceof Date &&
+    typeof toOrDestination === 'string'
+  ) {
+    // 日帰り予約
+    return
+  } else if (typeof fromOrDestination === 'string') {
+    // すぐに予約する
+    return
+  }
+}
+
