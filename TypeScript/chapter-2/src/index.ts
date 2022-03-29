@@ -588,3 +588,20 @@ class Game {
     ]
   }
 }
+
+class MySet {
+  private list: number[] = []
+  has(value: number): boolean {
+    return this.list.indexOf(value) !== -1
+  }
+
+  add(value: number): MySet {
+    this.list.push(value)
+    return this
+  }
+}
+
+let set = new MySet
+set.add(1).add(2).add(3)
+set.has(2)
+set.has(3)
