@@ -624,14 +624,14 @@ set.has(3)
 //   tasty: boolean
 // }
 
-type Food = {
+interface Food {
   calories: number
   tasty: boolean
 }
 
-type Sushi = Food & {
+interface Sushi extends Food {
   salty: boolean
 }
-type Cake = Food & {
+interface Cake extends Food {
   sweet: boolean
 }
