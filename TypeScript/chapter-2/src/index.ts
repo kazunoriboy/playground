@@ -601,6 +601,16 @@ class MySet {
   }
 }
 
+class MutableSet extends MySet {
+  delete(value: number): boolean {
+    return false;
+  }
+
+  add(value: number): MutableSet {
+    return this
+  }
+}
+
 let set = new MySet
 set.add(1).add(2).add(3)
 set.has(2)
