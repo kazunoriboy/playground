@@ -612,15 +612,26 @@ set.add(1).add(2).add(3)
 set.has(2)
 set.has(3)
 
-interface Sushi {
+// interface Sushi {
+//   calories: number
+//   salty: boolean
+//   tasty: boolean
+// }
+
+// type Cake = {
+//   calories: number
+//   sweet: boolean
+//   tasty: boolean
+// }
+
+type Food = {
   calories: number
+  tasty: boolean
+}
+
+type Sushi = Food & {
   salty: boolean
-  tasty: boolean
 }
-
-type Cake = {
-  calories: number
+type Cake = Food & {
   sweet: boolean
-  tasty: boolean
 }
-
