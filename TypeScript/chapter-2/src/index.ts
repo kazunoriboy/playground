@@ -574,3 +574,17 @@ class Bishop extends Piece { }
 class Knight extends Piece { }
 class Rook extends Piece { }
 class Pawn extends Piece { }
+
+class Game {
+  private pieces = Game.makePieces()
+
+  private static makPieces() {
+    return [
+      new King('White', 'E', 1),
+      new King('Black', 'E', 8),
+
+      new Queen('White', 'D', 1),
+      // 以下省略
+    ]
+  }
+}
