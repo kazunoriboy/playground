@@ -611,3 +611,9 @@ let set = new MySet
 set.add(1).add(2).add(3)
 set.has(2)
 set.has(3)
+
+type Sushi = {
+  calories: number
+  salty: boolean
+  tasty: boolean
+}
