@@ -595,7 +595,7 @@ class MySet {
     return this.list.indexOf(value) !== -1
   }
 
-  add(value: number): MySet {
+  add(value: number): this {
     this.list.push(value)
     return this
   }
@@ -604,10 +604,6 @@ class MySet {
 class MutableSet extends MySet {
   delete(value: number): boolean {
     return false;
-  }
-
-  add(value: number): MutableSet {
-    return this
   }
 }
 
