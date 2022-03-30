@@ -635,3 +635,16 @@ interface Sushi extends Food {
 interface Cake extends Food {
   sweet: boolean
 }
+
+interface User {
+  name: string
+}
+
+interface User {
+  age: number
+}
+
+let user_a: User = {
+  name: 'Ashley',
+  age: 30
+}
