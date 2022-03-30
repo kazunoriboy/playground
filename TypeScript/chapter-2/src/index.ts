@@ -672,3 +672,17 @@ interface User3<Age extends string> {
 let user_b: User3 = {
   age: 10
 }
+
+interface Animal {
+  eat(food: string): void
+  sleep(hours: number): void
+}
+
+class Cat implements Animal {
+  eat(food: string) {
+    console.info('Ate some', food, '. Mmm!')
+  }
+  sleep(hours: number) {
+    console.info('slept for', hours, 'hours')
+  }
+}
