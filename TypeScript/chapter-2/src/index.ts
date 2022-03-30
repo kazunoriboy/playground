@@ -674,11 +674,13 @@ let user_b: User3 = {
 }
 
 interface Animal {
+  readonly name: string
   eat(food: string): void
   sleep(hours: number): void
 }
 
 class Cat implements Animal {
+  name = 'Whiskers'
   eat(food: string) {
     console.info('Ate some', food, '. Mmm!')
   }
