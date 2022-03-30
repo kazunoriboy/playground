@@ -679,12 +679,19 @@ interface Animal {
   sleep(hours: number): void
 }
 
-class Cat implements Animal {
+interface Feline {
+  meow(): void
+}
+
+class Cat implements Animal, Feline {
   name = 'Whiskers'
   eat(food: string) {
     console.info('Ate some', food, '. Mmm!')
   }
   sleep(hours: number) {
     console.info('slept for', hours, 'hours')
+  }
+  meow() {
+    console.info('Meow')
   }
 }
