@@ -648,3 +648,11 @@ let user_a: User = {
   name: 'Ashley',
   age: 30
 }
+
+type User2 = {
+  name: string
+}
+
+type User2 = {
+  age: number
+}
