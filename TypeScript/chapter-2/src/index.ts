@@ -644,6 +644,10 @@ interface User {
   age: number
 }
 
+interface User {
+  age: string
+}
+
 let user_a: User = {
   name: 'Ashley',
   age: 30
