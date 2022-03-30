@@ -660,3 +660,11 @@ type User2 = {
 type User2 = {
   age: number
 }
+
+interface User3<Age extends number> {
+  age: Age
+}
+
+interface User3<Age extends string> {
+  age: Age
+}
