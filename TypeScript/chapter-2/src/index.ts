@@ -668,3 +668,7 @@ interface User3<Age extends number> {
 interface User3<Age extends string> {
   age: Age
 }
+
+let user_b: User3 = {
+  age: 10
+}
