@@ -760,3 +760,4 @@ interface StringDatabaseConstructor {
   new(state?: State): StringDatabase
   from(state: State): StringDatabase
 }
+class MyMap<K, V> {
