@@ -788,3 +788,13 @@ let a5 = new MyMap<string, number>('a', 1)
 let b5 = new MyMap('b', 2)
 a5.get('k')
 b5.set('k', false)
+
+type ClassConstructor = new(...args: any[]) => {}
+
+function withEZDebug<C extends ClassConstructor>(Class: C) {
+  return class extends Class {
+    constructor(...args: any[]) {
+      super(...args)
+    }
+  }
+}
