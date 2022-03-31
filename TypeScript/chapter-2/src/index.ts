@@ -783,3 +783,8 @@ interface MyMap<K, V> {
   get(key: K): V
   set(key: K, value: V): void
 }
+
+let a5 = new MyMap<string, number>('a', 1)
+let b5 = new MyMap('b', 2)
+a5.get('k')
+b5.set('k', false)
