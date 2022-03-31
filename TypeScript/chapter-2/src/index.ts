@@ -734,7 +734,7 @@ type State = {
 }
 
 class StringDatabase {
-  state: State = {}
+  constructor(public state: State = {}) {}
   get(key: string): string | null {
     return key in this.state ? this.state[key] : null
   }
@@ -757,6 +757,6 @@ interface StringDatabase {
 }
 
 interface StringDatabaseConstructor {
-  new(): StringDatabase
+  new(state?: State): StringDatabase
   from(state: State): StringDatabase
 }
