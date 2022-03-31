@@ -764,3 +764,9 @@ class MyMap<K, V> {
   constructor(initialKey: K, initialValue: V) {
 
   }
+  get(key: K): V {
+
+  }
+  set(key: K, value: V): void {
+
+  }
