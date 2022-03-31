@@ -778,3 +778,8 @@ class MyMap<K, V> {
 
   }
 }
+
+interface MyMap<K, V> {
+  get(key: K): V
+  set(key: K, value: V): void
+}
