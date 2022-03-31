@@ -761,3 +761,6 @@ interface StringDatabaseConstructor {
   from(state: State): StringDatabase
 }
 class MyMap<K, V> {
+  constructor(initialKey: K, initialValue: V) {
+
+  }
