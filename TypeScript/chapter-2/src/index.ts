@@ -770,3 +770,6 @@ class MyMap<K, V> {
   set(key: K, value: V): void {
 
   }
+  merge<K1, V1>(map: MyMap<K1, V1>): MyMap<K | K1, V | V1> {
+
+  }
