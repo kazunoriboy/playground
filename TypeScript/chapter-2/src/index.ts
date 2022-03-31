@@ -749,3 +749,14 @@ class StringDatabase {
     return db
   }
 }
+
+interface StringDatabase {
+  state: State
+  get(key: string): string | null
+  set(key: string, value: string): void
+}
+
+interface StringDatabaseConstructor {
+  new(): StringDatabase
+  from(state: State): StringDatabase
+}
