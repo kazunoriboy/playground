@@ -790,11 +790,14 @@ a5.get('k')
 b5.set('k', false)
 
 type ClassConstructor = new(...args: any[]) => {}
+type ClassConstructor<T> = new(...args: any[]) => T
 
-function withEZDebug<C extends ClassConstructor>(Class: C) {
+function withEZDebug<C extends ClassConstructor<{getDebugValue(): object}>>(Class: C) {
   return class extends Class {
-    constructor(...args: any[]) {
-      super(...args)
+    debug() {
+      let Name = this.constructor.name
+      let value = this.getDebugValue()
+      return Name + '(' + JSON.stringify(value) + ')'
     }
   }
 }
