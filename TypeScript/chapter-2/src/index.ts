@@ -818,3 +818,18 @@ class HardToDebugUser {
 let User = withEZDebug(HardToDebugUser)
 let user = new User(3, 'Emma', 'Gluzman')
 user.debug()
+
+function serializable<T extends ClassConstructor<{getValue(): Payload}>>(Constructor: T) {
+  return class extends Constructor {
+    serialize() {
+      return this.getValue().toString()
+    }
+  }
+}
+
+@serializable
+class APIPayload {
+  getValue(): Payload {
+
+  }
+}
