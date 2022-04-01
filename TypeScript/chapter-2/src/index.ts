@@ -789,7 +789,6 @@ let b5 = new MyMap('b', 2)
 a5.get('k')
 b5.set('k', false)
 
-type ClassConstructor = new(...args: any[]) => {}
 type ClassConstructor<T> = new(...args: any[]) => T
 
 function withEZDebug<C extends ClassConstructor<{getDebugValue(): object}>>(Class: C) {
