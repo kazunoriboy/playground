@@ -848,3 +848,19 @@ class MessageQueue {
 class BadQueue extends MessageQueue {}
 
 new MessageQueue({})
+
+type Shoe = {
+  purpose: string
+}
+
+class BalletFlat implements Shoe {
+  purpose = 'dancing'
+}
+
+class Boot implements Shoe {
+  purpose = 'woodcutting'
+}
+
+class Sneaker implements Shoe {
+  purpose = 'walking'
+}
