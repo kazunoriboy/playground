@@ -833,3 +833,6 @@ class APIPayload {
 
   }
 }
+
+let payload = new APIPayload
+let serialized = payload.serialize()
