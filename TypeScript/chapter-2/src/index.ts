@@ -836,3 +836,11 @@ class APIPayload {
 
 let payload = new APIPayload
 let serialized = payload.serialize()
+
+class MessageQueue {
+  private constructor(private messages: string[]) {}
+}
+
+class BadQueue extends MessageQueue {}
+
+new MessageQueue({})
