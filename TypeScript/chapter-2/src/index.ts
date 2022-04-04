@@ -952,3 +952,21 @@ chirp(new Animal)
 chirp(new Bird)
 chirp(new Crow)
 
+function clone(f: (b: Bird) => Bird): void {
+
+}
+
+function birdToBird(b: Bird): Bird {
+  return b
+}
+clone(birdToBird)
+
+function birdToCrow(b: Bird): Crow {
+  return new Crow
+}
+clone(birdToCrow)
+
+function birdToAnimal(b: Bird): Animal {
+  return new Animal
+}
+clone(birdToAnimal)
