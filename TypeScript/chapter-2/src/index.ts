@@ -923,3 +923,14 @@ let existingUser: ExistingUser = {
 deleteUser(existingUser)
 
 existingUser.id
+
+type LegacyUser = {
+  id?: number | string
+  name: string
+}
+
+let legacyUser: LegacyUser = {
+  id: '793331',
+  name: 'Xin Yang'
+}
+deleteUser(legacyUser)
