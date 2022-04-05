@@ -1024,3 +1024,11 @@ function typeWidening5() {
   a = 3
   a = 'b'
 }
+
+function typeWidening6() {
+  let a = null
+  a = 3
+  a = 'b'
+  return a
+}
+typeWidening6()
