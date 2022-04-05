@@ -1032,3 +1032,12 @@ function typeWidening6() {
   return a
 }
 typeWidening6()
+
+function constAssertion() {
+  let a = {x: 3}
+  let b: {x: 3}
+  let c = {x: 3} as const
+
+  let d = [1, {x: 2}]
+  let e = [1, {x: 2}] as const
+}
