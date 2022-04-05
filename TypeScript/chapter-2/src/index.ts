@@ -1001,3 +1001,10 @@ function typeWidening2() {
   const e = E.X
   console.log(e); 
 }
+
+function typeWidening3() {
+  let a: 'x' = 'x'
+  let b: 3 = 3
+  var c: true = true
+  const d: {x: 3} = {x: 3}
+}
