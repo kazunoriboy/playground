@@ -1017,5 +1017,10 @@ function typeWidening4() {
   const c: 'x' = 'x'
   let d = c
   console.log(d);
-  
+}
+
+function typeWidening5() {
+  let a = null
+  a = 3
+  a = 'b'
 }
