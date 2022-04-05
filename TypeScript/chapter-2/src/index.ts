@@ -970,3 +970,13 @@ function birdToAnimal(b: Bird): Animal {
   return new Animal
 }
 clone(birdToAnimal)
+
+function animalToBird(a: Animal): Bird {
+  return new Bird
+}
+clone(animalToBird)
+
+function crowToBird(c: Crow): Bird {
+  return new Bird
+}
+clone(crowToBird)
