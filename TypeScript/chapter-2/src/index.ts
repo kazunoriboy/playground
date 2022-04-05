@@ -989,4 +989,15 @@ function typeWidening() {
 
   enum E {X, Y, Z}
   let e = E.X
+  console.log(e);
+}
+
+function typeWidening2() {
+  const a = 'x'
+  const b = 3
+  const c = true
+
+  enum E {X, Y, Z}
+  const e = E.X
+  console.log(e); 
 }
