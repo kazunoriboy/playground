@@ -1041,3 +1041,16 @@ function constAssertion() {
   let d = [1, {x: 2}]
   let e = [1, {x: 2}] as const
 }
+
+type Options = {
+  baseURL: string
+  cacheSize?: number
+  tier?: 'prod' | 'dev'
+}
+class API {
+  constructor (private options: Options) {}
+}
+new API({
+  baseURL: 'https://api.mysite.com',
+  tier: 'prod'
+})
