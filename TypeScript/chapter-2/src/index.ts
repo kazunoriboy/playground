@@ -1054,3 +1054,7 @@ new API({
   baseURL: 'https://api.mysite.com',
   tier: 'prod'
 })
+new API({
+  baseURL: 'https://api.mysite.com',
+  badTier: 'prod'
+})
