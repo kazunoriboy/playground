@@ -1062,3 +1062,8 @@ new API({
   baseURL: 'https://api.mysite.com',
   badTire: 'prod'
 } as Options)
+let badOptions = {
+  baseURL: 'https://api.mysite.com',
+  badTier: 'prod'
+}
+new API(badOptions)
