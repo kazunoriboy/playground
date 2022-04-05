@@ -980,3 +980,13 @@ function crowToBird(c: Crow): Bird {
   return new Bird
 }
 clone(crowToBird)
+
+function typeWidening() {
+  let a = 'x'
+  let b = 3
+  var c = true
+  const d = {x: 3}
+
+  enum E {X, Y, Z}
+  let e = E.X
+}
