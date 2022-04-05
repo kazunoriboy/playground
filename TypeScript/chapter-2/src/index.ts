@@ -1008,3 +1008,14 @@ function typeWidening3() {
   var c: true = true
   const d: {x: 3} = {x: 3}
 }
+
+function typeWidening4() {
+  const a = 'x'
+  let b = a
+  console.log(b);
+  
+  const c: 'x' = 'x'
+  let d = c
+  console.log(d);
+  
+}
