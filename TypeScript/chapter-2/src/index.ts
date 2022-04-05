@@ -1067,3 +1067,8 @@ let badOptions = {
   badTier: 'prod'
 }
 new API(badOptions)
+let options: Options = {
+  baseURL: 'https://api.mysite.com',
+  badTier: 'prod'
+}
+new API(options)
