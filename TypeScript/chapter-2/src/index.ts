@@ -1099,4 +1099,9 @@ function parseWidth(width: number | string | null | undefined): Width | null {
     return {unit: 'px', value: width}
   }
 
+  let unit = parseUnit(width)
+  if (unit) {
+    return {unit, value: parseFloat(width)}
+  }
+  return null
 }
