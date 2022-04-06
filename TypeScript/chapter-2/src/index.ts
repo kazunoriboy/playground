@@ -1084,3 +1084,9 @@ function parseUnit(value: string): Unit | null {
   }
   return null
 }
+
+type Width = {
+  unit: Unit,
+  value: number
+}
+
