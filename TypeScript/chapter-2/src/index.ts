@@ -1090,3 +1090,8 @@ type Width = {
   value: number
 }
 
+function parseWidth(width: number | string | null | undefined): Width | null {
+  if (width == null) {
+    return null
+  }
+}
