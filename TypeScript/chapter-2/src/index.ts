@@ -1072,3 +1072,15 @@ let options: Options = {
   badTier: 'prod'
 }
 new API(options)
+
+type Unit = 'cm' | 'px' | '%'
+let units: Unit[] = ['cm', 'px', '%']
+
+function parseUnit(value: string): Unit | null {
+  for (let i = 0; i < units.length; i++) {
+    if (value.endsWith(units[i])) {
+      return units[i]
+    }
+  }
+  return null
+}
