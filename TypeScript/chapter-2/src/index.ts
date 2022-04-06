@@ -1106,13 +1106,13 @@ function parseWidth(width: number | string | null | undefined): Width | null {
   return null
 }
 
-type UserTextEvent = {value: string, target: HTMLInputElement}
-type UserMouseEvent = {value: [number, number], target: HTMLElement}
+type UserTextEvent = {type: 'TextEvent', value: string, target: HTMLInputElement}
+type UserMouseEvent = {type: 'MouseEvent', value: [number, number], target: HTMLElement}
 
 type UserEvent = UserTextEvent | UserMouseEvent
 
 function handle(event: UserEvent) {
-  if (typeof event.value === 'string') {
+  if (event.type === 'TextEvent') {
     event.value
     event.target
 
