@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "lib": ["es2020", "DOM"j],
+    "lib": ["es2020", "DOM"],
     "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
     "strict": true,
     "target": "ES2020",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "noImplicitReturns": true
+    
   },
   "include": [
     "src"

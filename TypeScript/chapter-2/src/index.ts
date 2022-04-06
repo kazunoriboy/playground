@@ -1133,3 +1133,9 @@ function getNextDay(w: Weekday): Day {
     case 'Thu': return 'Fri'
   }
 }
+
+function isBig(n: number) {
+  if (n >= 100) {
+    return true
+  }
+}
