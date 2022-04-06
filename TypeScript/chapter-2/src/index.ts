@@ -1154,6 +1154,8 @@ type APIResponse = {
 }
 
 type FriendList = APIResponse['user']['friendList']
+type Friend = FriendList['friends'][number]
+
 function getAPIResponse(): Promise<APIResponse> {
 }
 
