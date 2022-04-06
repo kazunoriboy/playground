@@ -1139,3 +1139,28 @@ function isBig(n: number) {
     return true
   }
 }
+
+type FriendList = {
+  count: number
+  friends: {
+    firstName: string
+    lastName: string
+  }[]
+}
+
+type APIResponse = {
+  user: {
+    userId: string
+    friendList: FriendList
+  }
+}
+
+function getAPIResponse(): Promise<APIResponse> {
+}
+
+function renderFriendList(friendList: FriendList) {
+
+}
+
+let response = await getAPIResponse()
+renderFriendList(response.user.friendList)
