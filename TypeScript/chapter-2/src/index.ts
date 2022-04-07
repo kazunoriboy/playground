@@ -1264,3 +1264,10 @@ function tuple<T extends unknown[]>(...ts: T): T {
 }
 
 let aaaa = tuple(1, true)
+
+function isString(a: unknown): boolean {
+  return typeof a === 'string'
+}
+
+isString('a')
+isString([7])
