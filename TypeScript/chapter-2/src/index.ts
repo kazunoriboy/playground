@@ -1235,3 +1235,7 @@ type NullableAccount = {
   [K in keyof Account]: Account[K] | null
 }
 
+type ReadonlyAccount = {
+  readonly [K in keyof Account]: Account[K]
+}
+
