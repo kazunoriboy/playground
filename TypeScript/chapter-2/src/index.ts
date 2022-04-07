@@ -1220,3 +1220,10 @@ let nextDay2: Record<Weekday, Day> = {
 let nextDay3: {[K in Weekday2]: Day2} = {
   Mon: 'Tue'
 }
+
+type Account = {
+  id: number
+  isEmployee: boolean
+  notes: string[]
+}
+
