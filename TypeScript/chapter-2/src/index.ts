@@ -1183,5 +1183,14 @@ type ActivityLog = {
   }[]
 }
 
-let activityLog: ActivityLog = new ActivityLog()
+let activityLog: ActivityLog = {
+  lastEvent: new Date,
+  events: [
+    {
+      id: 'jefwie',
+      timestamp: new Date,
+      type: 'Read'
+    }
+  ]
+}
 let lastEvent = get(activityLog, 'lastEvent')
