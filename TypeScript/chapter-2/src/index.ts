@@ -1216,3 +1216,7 @@ type Day2 = Weekday | 'Sat' | 'Sun'
 let nextDay2: Record<Weekday, Day> = {
   Mon: 'Tue'
 }
+
+let nextDay3: {[K in Weekday2]: Day2} = {
+  Mon: 'Tue'
+}
