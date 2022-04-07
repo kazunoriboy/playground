@@ -1231,3 +1231,7 @@ type OptionalAccount = {
   [K in keyof Account]?: Account[K]
 }
 
+type NullableAccount = {
+  [K in keyof Account]: Account[K] | null
+}
+
