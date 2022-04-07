@@ -1209,3 +1209,10 @@ let get2: Get = (object: any, ...keys: string[]) => {
 
 get2(activityLog, 'events', 0, 'type')
 get2(activityLog, 'bad')
+
+type Weekday2 = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri'
+type Day2 = Weekday | 'Sat' | 'Sun'
+
+let nextDay2: Record<Weekday, Day> = {
+  Mon: 'Tue'
+}
