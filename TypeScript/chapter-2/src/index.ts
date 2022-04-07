@@ -1256,3 +1256,5 @@ let amountDue: Currency = {
 }
 
 let otherAmountDue = Currency.from(330, 'EUR')
+
+let aaa = [1, true]
