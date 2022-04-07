@@ -1239,3 +1239,7 @@ type ReadonlyAccount = {
   readonly [K in keyof Account]: Account[K]
 }
 
+type Account2 = {
+  -readonly [K in keyof ReadonlyAccount]: Account[K]
+}
+
