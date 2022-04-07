@@ -1165,3 +1165,7 @@ function renderFriendList(friendList: FriendList) {
 
 let response = await getAPIResponse()
 renderFriendList(response.user.friendList)
+
+type ResponseKeys = keyof APIResponse
+type UserKeys = keyof APIResponse['user']
+type FriendListKeys = keyof APIResponse['user']['friendList']
