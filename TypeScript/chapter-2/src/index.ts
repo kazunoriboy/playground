@@ -1265,7 +1265,7 @@ function tuple<T extends unknown[]>(...ts: T): T {
 
 let aaaa = tuple(1, true)
 
-function isString(a: unknown): boolean {
+function isString(a: unknown): a is string {
   return typeof a === 'string'
 }
 
@@ -1278,3 +1278,4 @@ function parseInput(input: string | number) {
     formattedInput = input.toUpperCase()
   }
 }
+
