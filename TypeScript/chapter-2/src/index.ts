@@ -1247,3 +1247,12 @@ type Account2 = {
    [K in keyof OptionalAccount]-?: Account[K]
  }
 
+
+import Currency from './Currency'
+
+let amountDue: Currency = {
+  unit: 'JPY',
+  value: 83733.10
+}
+
+let otherAmountDue = Currency.from(330, 'EUR')
