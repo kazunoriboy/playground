@@ -1271,3 +1271,10 @@ function isString(a: unknown): boolean {
 
 isString('a')
 isString([7])
+
+function parseInput(input: string | number) {
+  let formattedInput: string
+  if (isString(input)) {
+    formattedInput = input.toUpperCase()
+  }
+}
