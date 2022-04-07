@@ -1243,3 +1243,7 @@ type Account2 = {
   -readonly [K in keyof ReadonlyAccount]: Account[K]
 }
 
+ type Account3 = {
+   [K in keyof OptionalAccount]-?: Account[K]
+ }
+
