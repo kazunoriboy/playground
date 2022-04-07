@@ -1258,3 +1258,9 @@ let amountDue: Currency = {
 let otherAmountDue = Currency.from(330, 'EUR')
 
 let aaa = [1, true]
+
+function tuple<T extends unknown[]>(...ts: T): T {
+  return ts
+}
+
+let aaaa = tuple(1, true)
