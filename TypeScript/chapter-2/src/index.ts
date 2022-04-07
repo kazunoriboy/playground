@@ -1227,3 +1227,7 @@ type Account = {
   notes: string[]
 }
 
+type OptionalAccount = {
+  [K in keyof Account]?: Account[K]
+}
+
