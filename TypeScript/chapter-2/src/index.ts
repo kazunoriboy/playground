@@ -1340,3 +1340,14 @@ function builtInConditions() {
   type BBBB = {b: number}
   type I = InstanceType<AAAA>
 }
+
+function formatInput(input: string) {}
+
+function getUserInput(): string | number {
+  if (true) return 'text'
+}
+
+let input = getUserInput()
+
+formatInput(input as string)
+
