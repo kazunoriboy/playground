@@ -1329,4 +1329,7 @@ function builtInConditions() {
   type AA = number | string
   type BB = string
   type CC = Extract<A, B>
+
+  type AAA = {a?: number | null}
+  type BBB = NonNullable<AAA['a']>
 }
