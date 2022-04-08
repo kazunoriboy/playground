@@ -1300,3 +1300,10 @@ type BBB = ToArray<number | string>
 type ToArray2<T> = T extends unknown ? T[] : T[]
 type AAAA = ToArray2<number>
 type BBBB = ToArray2<number | string | boolean>
+
+type Without<T, U> = T extends U ? never : T
+
+type AB = Without<
+  boolean | number | string,
+  boolean
+>
