@@ -1325,4 +1325,8 @@ function builtInConditions() {
   type A = number | string
   type B = string
   type C = Exclude<A, B>
+
+  type AA = number | string
+  type BB = string
+  type CC = Extract<A, B>
 }
