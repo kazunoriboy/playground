@@ -1287,3 +1287,8 @@ function isLegacyDialog(
 ): dialog is LegacyDialog {
   return typeof dialog !== undefined;
 }
+
+type IsString<T> = T extends string ? true : false
+
+type AA = IsString<string>
+type BB = IsString<number>
