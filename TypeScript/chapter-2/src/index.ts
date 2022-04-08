@@ -1307,3 +1307,9 @@ type AB = Without<
   boolean | number | string,
   boolean
 >
+
+type ElementType<T> = T extends unknown[] ? T[number] : T
+type AAAAA = ElementType<number[]>
+
+type ElementType2<T> = T extends (infer U)[] ? U : T
+type BBBBB = ElementType2<number[]>
