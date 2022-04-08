@@ -1313,3 +1313,6 @@ type AAAAA = ElementType<number[]>
 
 type ElementType2<T> = T extends (infer U)[] ? U : T
 type BBBBB = ElementType2<number[]>
+
+type ElementUgly<T, U> = T extends U[] ? U : T
+type CCCCC = ElementUgly<number[]>
