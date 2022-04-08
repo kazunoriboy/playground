@@ -1332,4 +1332,8 @@ function builtInConditions() {
 
   type AAA = {a?: number | null}
   type BBB = NonNullable<AAA['a']>
+
+  type F = (a: number) => string
+  type R = ReturnType<F>
+
 }
