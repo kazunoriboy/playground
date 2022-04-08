@@ -1292,3 +1292,11 @@ type IsString<T> = T extends string ? true : false
 
 type AA = IsString<string>
 type BB = IsString<number>
+
+type ToArray<T> = T[]
+type AAA = ToArray<number>
+type BBB = ToArray<number | string>
+
+type ToArray2<T> = T extends unknown ? T[] : T[]
+type AAAA = ToArray2<number>
+type BBBB = ToArray2<number | string | boolean>
