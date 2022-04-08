@@ -1336,4 +1336,7 @@ function builtInConditions() {
   type F = (a: number) => string
   type R = ReturnType<F>
 
+  type AAAA = {new(): BBBB}
+  type BBBB = {b: number}
+  type I = InstanceType<AAAA>
 }
