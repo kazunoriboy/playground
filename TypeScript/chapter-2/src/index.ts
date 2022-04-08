@@ -1316,3 +1316,7 @@ type BBBBB = ElementType2<number[]>
 
 type ElementUgly<T, U> = T extends U[] ? U : T
 type CCCCC = ElementUgly<number[]>
+
+type SecondArg<F> = F extends (a: any, b: infer B) => any ? B : never
+type F = typeof Array['prototype']['slice']
+type G = SecondArg<F>
