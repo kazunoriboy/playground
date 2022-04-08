@@ -1351,3 +1351,5 @@ let input = getUserInput()
 
 formatInput(input as string)
 
+formatInput(<string>input)
+
