@@ -1279,3 +1279,11 @@ function parseInput(input: string | number) {
   }
 }
 
+type LegacyDialog = {}
+type Dialog = {}
+
+function isLegacyDialog(
+  dialog: LegacyDialog | Dialog
+): dialog is LegacyDialog {
+  return typeof dialog !== undefined;
+}
