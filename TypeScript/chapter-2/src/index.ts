@@ -1320,3 +1320,9 @@ type CCCCC = ElementUgly<number[]>
 type SecondArg<F> = F extends (a: any, b: infer B) => any ? B : never
 type F = typeof Array['prototype']['slice']
 type G = SecondArg<F>
+
+function builtInConditions() {
+  type A = number | string
+  type B = string
+  type C = Exclude<A, B>
+}
