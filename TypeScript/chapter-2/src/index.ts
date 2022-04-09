@@ -1353,3 +1353,22 @@ formatInput(input as string)
 
 formatInput(<string>input)
 
+type Dialog2 = {
+  id?: string
+}
+
+function closeDialog(dialog: Dialog2) {
+  if (!dialog.id) {
+    return
+  }
+  setTimeout(() => removeFromDOM(
+    dialog,
+    document.getElementById(dialog.id)
+  ))
+}
+
+function removeFromDOM(dialog: Dialog, element: Element) {
+  element.parentNode.removeChild(element)
+
+  delete dialog.id
+}
