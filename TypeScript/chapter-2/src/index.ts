@@ -1363,12 +1363,13 @@ function closeDialog(dialog: Dialog2) {
   }
   setTimeout(() => removeFromDOM(
     dialog,
-    document.getElementById(dialog.id)
+    document.getElementById(dialog.id!)!
   ))
 }
 
-function removeFromDOM(dialog: Dialog, element: Element) {
-  element.parentNode.removeChild(element)
+function removeFromDOM(dialog: Dialog2, element: Element) {
+  element.parentNode!.removeChild(element)
 
   delete dialog.id
 }
+
