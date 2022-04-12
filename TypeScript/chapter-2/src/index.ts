@@ -1353,23 +1353,23 @@ formatInput(input as string)
 
 formatInput(<string>input)
 
-type Dialog2 = {
-  id?: string
+type VisibleDialog = {
+  id: string
 }
+type DestroyedDialog = {}
+type Dialog2 = VisibleDialog | DestroyedDialog
 
 function closeDialog(dialog: Dialog2) {
-  if (!dialog.id) {
+  if (!('id' in dialog)) {
     return
   }
   setTimeout(() => removeFromDOM(
     dialog,
-    document.getElementById(dialog.id!)!
+    document.getElementById(dialog.id)!
   ))
 }
 
-function removeFromDOM(dialog: Dialog2, element: Element) {
+function removeFromDOM(dialog: VisibleDialog, element: Element) {
   element.parentNode!.removeChild(element)
-
-  delete dialog.id
 }
 
