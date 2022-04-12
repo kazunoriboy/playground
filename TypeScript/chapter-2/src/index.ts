@@ -1403,5 +1403,9 @@ function queryForUser(id: UserID) {
 
 }
 
-let id: CompanyID = 'b4843361'
-queryForUser(id)
+let companyId = CompanyID('8a6076cf')
+let orderId = OrderID('9904acc1')
+let userId1 = UserID('d21b1dbf')
+
+queryForUser(userId1)
+queryForUser(companyId)
