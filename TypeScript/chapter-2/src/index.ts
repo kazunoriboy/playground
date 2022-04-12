@@ -1409,3 +1409,6 @@ let userId1 = UserID('d21b1dbf')
 
 queryForUser(userId1)
 queryForUser(companyId)
+
+let arr: Array<string> = []
+arr.zip(['string'])
