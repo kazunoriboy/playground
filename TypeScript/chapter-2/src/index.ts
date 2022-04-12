@@ -1382,9 +1382,9 @@ function fetchUser() {
   userId = 'aaaa'
 }
 
-type CompanyID = string
-type OrderID = string
-type UserID = string
+type CompanyID = string & {readonly brand: unique symbol}
+type OrderID = string & {readonly brand: unique symbol}
+type UserID = string & {readonly brand: unique symbol}
 type ID = CompanyID | OrderID | UserID
 
 function queryForUser(id: UserID) {
