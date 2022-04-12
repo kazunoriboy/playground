@@ -1373,7 +1373,7 @@ function removeFromDOM(dialog: VisibleDialog, element: Element) {
   element.parentNode!.removeChild(element)
 }
 
-let userId: string
+let userId!: string
 fetchUser()
 
 userId.toUpperCase()
