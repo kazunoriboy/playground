@@ -1374,6 +1374,10 @@ function removeFromDOM(dialog: VisibleDialog, element: Element) {
 }
 
 let userId: string
+fetchUser()
 
 userId.toUpperCase()
 
+function fetchUser() {
+  userId = 'aaaa'
+}
