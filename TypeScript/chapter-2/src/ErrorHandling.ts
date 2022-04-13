@@ -19,5 +19,9 @@ try {
   let date = parse(ask())
   console.info('Date is', date.toISOString())
 } catch (e) {
-  console.error('Error parsing date for some reason')
+  if (e instanceof RangeError) {
+    console.error('Error parsing date for some reason')
+  } else {
+    throw e
+  }
 }
