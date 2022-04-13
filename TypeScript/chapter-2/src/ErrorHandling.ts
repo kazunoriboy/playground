@@ -1,5 +1,5 @@
 function ask() {
-  return prompt('When is your birthday?')!
+  return prompt('When is your birthday?')
 }
 
 function parse(birthday: string): Date | null {
