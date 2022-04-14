@@ -5,6 +5,10 @@ function ask() {
 class InvalidDateFormatError extends RangeError {}
 class DateIsInTheFutureError extends RangeError {}
 
+/**
+ * @throws {InvalidDateFormatError} ユーザーが誕生日を間違って入力した
+ * @throws {DateIsInTheFutureError} ユーザーが未来の誕生日を入力した
+ */
 function parse(birthday: string): Date {
   let date = new Date(birthday)
   if (!isValid(date)) {
