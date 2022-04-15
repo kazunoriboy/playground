@@ -9,13 +9,13 @@ class DateIsInTheFutureError extends RangeError {}
  * @throws {InvalidDateFormatError} ユーザーが誕生日を間違って入力した
  * @throws {DateIsInTheFutureError} ユーザーが未来の誕生日を入力した
  */
-function parse(birthday: string): Date {
+function parse(birthday: string): Date | InvalidDateFormatError | DateIsInTheFutureError {
   let date = new Date(birthday)
   if (!isValid(date)) {
-    throw new InvalidDateFormatError('Enter a date in the form YYYY/MM/DD')
+    return new InvalidDateFormatError('Enter a date in the form YYYY/MM/DD')
   }
   if (date.getTime() > Date.now()) {
-    throw new DateIsInTheFutureError('Are you a timelord')
+    return new DateIsInTheFutureError('Are you a timelord')
   }
   return date
 }
@@ -25,15 +25,11 @@ function isValid(date: Date) {
     && !Number.isNaN(date.getTime())
 }
 
-try {
-  let date = parse(ask())
-  console.info('Date is', date.toISOString())
-} catch (e) {
-  if (e instanceof InvalidDateFormatError) {
-    console.error(e.message)
-  } else if (e instanceof RangeError) {
-    console.info(e.message)
-  } else {
-    throw e
-  }
+let result = parse(ask())
+if (result instanceof InvalidDateFormatError) {
+  console.error(result.message)
+} else if (result instanceof DateIsInTheFutureError) {
+  console.info(result.message)
+} else {
+  console.info('Date is', result.toISOString())
 }
