@@ -25,8 +25,8 @@ function parse(birthday: string): Date[] {
 
 ask()
   .flatMap(parse)
-  .flatMap(date => new SourceMap(date.toISOString()))
-  .flatMap(date => new SourceMap('Date is' + date))
+  .flatMap(date => new Some(date.toISOString()))
+  .flatMap(date => new Some('Date is' + date))
   .getOrElse('Error parsing date for some reason')
 
 interface Option<T> {
@@ -53,6 +53,21 @@ class None implements Option<never> {
     return value
   }
 }
+
+function Option<T>(value: null | undefined): None
+function Option<T>(value: T): Some<T>
+function Option<T>(value: T): Option<T> {
+  if (value == null) {
+    return new None
+  }
+  return new Some(value)
+}
+
+let result2 = Option(6)
+  .flatMap(n => Option(n * 3))
+  .flatMap(n => new None)
+  .getOrElse(7)
+
 
 function isValid(date: Date) {
   return Object.prototype.toString.call(date) === '[object Date]'
