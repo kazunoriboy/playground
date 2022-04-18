@@ -31,3 +31,13 @@ function appendAndReadPromise(path: string, data: string): Promise<string> {
     .then(() => readPromise(path))
     .catch(error => console.error(error))
 }
+
+type Executor = (
+  resolve: Function,
+  reject: Function
+) => void
+
+class Promise {
+  constructor(f: Executor) {}
+}
+
