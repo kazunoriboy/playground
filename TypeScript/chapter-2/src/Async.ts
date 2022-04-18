@@ -25,3 +25,9 @@ fs.appendFile(
     }
   }
 )
+
+function appendAndReadPromise(path: string, data: string): Promise<string> {
+  return appendPromise(path, data)
+    .then(() => readPromise(path))
+    .catch(error => console.error(error))
+}
