@@ -32,12 +32,27 @@ function appendAndReadPromise(path: string, data: string): Promise<string> {
     .catch(error => console.error(error))
 }
 
-type Executor = (
-  resolve: Function,
-  reject: Function
+type Executor<T> = (
+  resolve: (result: T) => void,
+  reject: (error: unknown) => void
 ) => void
 
-class Promise {
-  constructor(f: Executor) {}
+class Promise<T> {
+  constructor(f: Executor<T>) {}
+  then<U>(g: (result: T) => Promise<U> | U): Promise<U>
+  catch<U>(g: (error: unknown) => Promise<U> | U): Promise<U>
 }
 
+import {readFile} from 'fs'
+
+function readFilePromise(path: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    readFile(path, (error, result) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(result)
+      }
+    })
+  })
+}
