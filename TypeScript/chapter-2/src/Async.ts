@@ -91,7 +91,14 @@ client.on('error', e => console.error('An error occurred!', e))
 client.on('reconnecting', params => console.info('Reconnecting...', params))
 
 type RedisClient = {
-  on(event: 'ready', f: () => void): void
-  on(event: 'error', f: (e: Error) => void): void
-  on(event: 'reconnecting', f: (params: {attempt: number, delay: number}) => void): void
+  on<E extends keyof Events>(
+    event: E,
+    f: (arg: Events[E]) => void
+  ): void
+}
+
+type Events = {
+  ready: void
+  error: Error
+  reconnecting: {attempt: number, delay: number}
 }
