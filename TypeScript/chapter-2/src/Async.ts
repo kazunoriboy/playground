@@ -56,3 +56,12 @@ function readFilePromise(path: string): Promise<string> {
     })
   })
 }
+
+
+function getUser() {
+  getUserID(18)
+    .then(user => getLocation(user))
+    .then(location => console.info('got location', location))
+    .catch(error => console.error(error))
+    .finally(() => console.info('done getting location'))
+}
