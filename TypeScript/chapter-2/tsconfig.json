@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es2020", "DOM"],
+    "lib": ["es2020", "DOM", "WebWorker"],
     "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
