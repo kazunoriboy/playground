@@ -81,3 +81,11 @@ interface Emitter {
   emit(channel: string, value: unknown): void
   on(channel: string, f: (value: unknown) => void): void
 }
+
+import * as redis from 'redis'
+
+let client = redis.createClient()
+
+client.on('ready', () => console.info('Client is ready'))
+client.on('error', e => console.error('An error occurred!', e))
+client.on('reconnecting', params => console.info('Reconnecting...', params))
