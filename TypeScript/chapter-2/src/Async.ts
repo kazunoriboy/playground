@@ -106,3 +106,6 @@ type Events = {
   error: Error
   reconnecting: {attempt: number, delay: number}
 }
+
+let worker = new Worker('WorkerScript.js')
+worker.postMessage('some data')
