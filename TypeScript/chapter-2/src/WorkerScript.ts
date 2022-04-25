@@ -54,3 +54,4 @@ type Events = {
 
 let commandEmitter: SafeEmitter<Commands> = new EventEmitter()
 
+let eventEmitter: SafeEmitter<Events> = new EventEmitter()
