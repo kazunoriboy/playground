@@ -51,3 +51,6 @@ type Events = {
   addedUserToThread: [ThreadID, UserID]
   removedUserFromThread: [ThreadID, UserID]
 }
+
+let commandEmitter: SafeEmitter<Commands> = new EventEmitter()
+
