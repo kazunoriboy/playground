@@ -37,3 +37,17 @@ interface SafeEmitter<
     listener: (...data: unknown[]) => void
   ): this
 }
+
+type Commands = {
+  sendMessageToThread: [ThreadID, Message]
+  createThread: [Participants]
+  addUserToThread: [ThreadID, UserID]
+  removeUserFromThread:  [ThreadID, UserID]
+}
+
+type Events = {
+  receivedMessage: [ThreadID, UserID, Message]
+  createdThread: [ThreadID, Participants]
+  addedUserToThread: [ThreadID, UserID]
+  removedUserFromThread: [ThreadID, UserID]
+}
