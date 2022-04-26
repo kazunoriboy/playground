@@ -93,3 +93,13 @@ let parallelDeterminant = runWithMatrixProtocol('determinant')
 parallelDeterminant([[1, 2], [3, 4]])
   .then(determinant => console.log(determinant)
 )
+
+import {fork} from 'child_process'
+
+let child = fork('./ChildThread.js')
+
+child.on('message', data =>
+  console.info('Child process sent a message', data)
+)
+
+child.send({type: 'syn', data: [3]})
