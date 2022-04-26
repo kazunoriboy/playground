@@ -1,3 +1,4 @@
+import { EventEmitter } from 'events'
 import {SafeEmitter} from './WorkerScript'
 
 let worker = new Worker('WorkerScript.js')
@@ -25,3 +26,26 @@ type Events = {
   addedUserToThread: [ThreadID, UserID]
   removedUserFromThread: [ThreadID, UserID]
 }
+
+let commandEmitter: SafeEmitter<Commands> = new EventEmitter()
+let eventEmitter: SafeEmitter<Events> = new EventEmitter()
+
+worker.onmessage = event =>
+  eventEmitter.emit(
+    event.data.type,
+    ...event.data.data
+  )
+
+commandEmitter.on('sendMessageToThread', data =>
+  worker.postMessage({type: 'sendMessageToThread', data})
+)
+commandEmitter.on('createThread', data =>
+  worker.postMessage({type: 'createThread', data})
+)
+
+
+eventEmitter.on('createdThread', (threadID, participants) =>
+  console.log('Created a new chat thread!', threadID, participants)
+)
+
+commandEmitter.emit('createThread', [123, 456])
