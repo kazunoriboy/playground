@@ -1428,4 +1428,5 @@ input2.addEventListener('change', () =>
 )
 
 document.body.appendChild(input2)
-    
+
+document.querySelector('.Element').value
