@@ -1414,3 +1414,18 @@ import './zip'
 
 let arr: Array<string> = []
 arr.zip(['string'])
+
+let model = {
+  url: window.location.href
+}
+
+let input2 = document.createElement('input')
+
+input2.classList.add('Input', 'URLInput')
+
+input2.addEventListener('change', () =>
+  model.url = input2.value.toUpperCase()
+)
+
+document.body.appendChild(input2)
+    
