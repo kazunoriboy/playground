@@ -68,3 +68,7 @@ eventEmitter.on('receivedMessage', data =>
 eventEmitter.on('createdThread', data =>
   postMessage({type: 'createdThread', data})
 )
+
+commandEmitter.on('sendMessageToThread', (threadID, Message) =>
+  console.log(`OK, I will send a message to thread ID ${threadID}`)
+)
