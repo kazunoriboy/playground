@@ -1,3 +1,5 @@
+import {SafeEmitter} from './WorkerScript'
+
 let worker = new Worker('WorkerScript.js')
 worker.postMessage('some data')
 worker.onmessage = e => {
