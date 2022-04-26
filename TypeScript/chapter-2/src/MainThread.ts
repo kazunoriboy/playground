@@ -49,3 +49,20 @@ eventEmitter.on('createdThread', (threadID, participants) =>
 )
 
 commandEmitter.emit('createThread', [123, 456])
+
+type Matrix = number[][]
+
+type MatrixProtocol = {
+  determinant: {
+    in: [Matrix]
+    out: number
+  }
+  'dot-product': {
+    in: [Matrix, Matrix]
+    out: Matrix
+  }
+  invert: {
+    in: [Matrix]
+    out: Matrix
+  }
+}
