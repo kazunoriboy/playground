@@ -55,3 +55,9 @@ type Events = {
 let commandEmitter: SafeEmitter<Commands> = new EventEmitter()
 
 let eventEmitter: SafeEmitter<Events> = new EventEmitter()
+
+onmessage = command =>
+  commandEmitter.emit(
+    command.data.type,
+    ...command.data.data
+  )
