@@ -66,3 +66,11 @@ type MatrixProtocol = {
     out: Matrix
   }
 }
+
+type Protocol = {
+  [command: string]: {
+    in: unknown[]
+    out: unknown
+  }
+}
+
