@@ -61,3 +61,10 @@ onmessage = command =>
     command.data.type,
     ...command.data.data
   )
+
+eventEmitter.on('receivedMessage', data =>
+  postMessage({type: 'receivedMessage', data})
+)
+eventEmitter.on('createdThread', data =>
+  postMessage({type: 'createdThread', data})
+)
