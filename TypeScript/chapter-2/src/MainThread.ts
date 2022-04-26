@@ -84,3 +84,12 @@ function createProtocol<P extends Protocol>(script: string) {
         worker.postMessage({command, args})
       })
 }
+
+let runWithMatrixProtocol = createProtocol<MatrixProtocol>(
+  'MatrixWorkerScript.js'
+)
+let parallelDeterminant = runWithMatrixProtocol('determinant')
+
+parallelDeterminant([[1, 2], [3, 4]])
+  .then(determinant => console.log(determinant)
+)
