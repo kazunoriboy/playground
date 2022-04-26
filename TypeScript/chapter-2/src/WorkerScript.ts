@@ -3,6 +3,11 @@ onmessage = e => {
   postMessage(`Ack: "${e.data}"`)
 }
 
+type Message = string
+type ThreadID = number
+type UserID = number
+type Participants = UserID[]
+
 type Command = 
   | {type: 'sendMessageToThread', data: [ThreadID, Message]}
   | {type: 'createThread', data: [Participants]}
@@ -25,7 +30,7 @@ function processCommandFromMainThread(
 
 import { EventEmitter } from "events"
 
-interface SafeEmitter<
+export interface SafeEmitter<
   Events extends Record<PropertyKey, unknown[]>
 > {
   emit<K extends keyof Events>(
