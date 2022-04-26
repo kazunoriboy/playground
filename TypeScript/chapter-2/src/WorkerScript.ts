@@ -72,3 +72,5 @@ eventEmitter.on('createdThread', data =>
 commandEmitter.on('sendMessageToThread', (threadID, Message) =>
   console.log(`OK, I will send a message to thread ID ${threadID}`)
 )
+
+eventEmitter.emit('createdThread', 123, [456, 789])
