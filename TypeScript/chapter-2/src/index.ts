@@ -1430,3 +1430,9 @@ input2.addEventListener('change', () =>
 document.body.appendChild(input2)
 
 document.querySelector('.Element').value
+
+let client = new Client
+let res = await client.query(
+  'SELECT name FROM users where id = $1',
+  [739311]
+)
