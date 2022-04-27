@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'simple-message',
+  templateUrl: './simple.component.html',
+  styleUrls: ['./simple.component.css']
 })
-export class AppComponent {
-  title = 'my-angular-app';
+export class SimpleComponent implements OnInit {
+  message?: string
+  ngOnInit() {
+    this.message = 'No messages, yet'
+  }
 }
