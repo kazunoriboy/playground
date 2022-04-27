@@ -1439,6 +1439,6 @@ let res = await client.query(
 
 db.collection('users')
   .find({id: 739311})
-  .toArray((err, user) =>
+  .toArray((err, user: User) =>
     // 処理
   )
