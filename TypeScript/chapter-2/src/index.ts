@@ -1436,3 +1436,9 @@ let res = await client.query(
   'SELECT name FROM users where id = $1',
   [739311]
 )
+
+db.collection('users')
+  .find({id: 739311})
+  .toArray((err, user) =>
+    // 処理
+  )
