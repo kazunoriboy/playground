@@ -27,6 +27,6 @@ export class Observable<T> implements Subscribable<T> {
     observerOrNext?: PartialObserver<T> | ((value: T) => void),
     complete?: () => void
   ): Subscription {
-    //
+    // ここに処理を入れる
   }
 }
