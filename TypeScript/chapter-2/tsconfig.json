@@ -9,7 +9,9 @@
     "experimentalDecorators": true,
     "noImplicitReturns": true,
     "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react",
+    "allowJs": true,
+    "checkJs": true
   },
   "include": [
     "src"
