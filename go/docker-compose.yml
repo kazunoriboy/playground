@@ -7,5 +7,5 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./app:/go/src/app
+      - ./:/go/src/
     tty: true
