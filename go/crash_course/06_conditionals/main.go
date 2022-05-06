@@ -11,4 +11,14 @@ func main() {
 	} else {
 		fmt.Printf("%d is less than %d\n", y, x)
 	}
+
+	color := "red"
+
+	if color == "red" {
+		fmt.Println("color is red")
+	} else if color == "blue" {
+		fmt.Println("color is blue")
+	} else {
+		fmt.Println("color is NOT blue or red")
+	}
 }
