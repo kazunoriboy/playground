@@ -2,9 +2,8 @@ package main
 
 import "fmt"
 
-name := "Brad"
-
 func main() {
+	name := "Brad"
 	var age int32 = 37
 	var isCool = true
 	isCool = false
