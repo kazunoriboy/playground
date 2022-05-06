@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	var name = "Brad"
-	var age = 37
+	var age int32 = 37
 
 	fmt.Println(name, age)
 	fmt.Printf("%T\n", age)
