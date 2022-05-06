@@ -18,4 +18,14 @@ func main() {
 		sum += id
 	}
 	fmt.Println("Sum", sum)
+
+	emails := map[string]string{"Bob": "bob@example.com", "Sharon": "sharon@example.com"}
+
+	for k, v := range emails {
+		fmt.Printf("%s: %s\n", k, v)
+	}
+
+	for k := range emails {
+		fmt.Println("Name: " + k)
+	}
 }
