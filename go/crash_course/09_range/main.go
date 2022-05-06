@@ -12,4 +12,10 @@ func main() {
 	for _, id := range ids {
 		fmt.Printf("ID: %d\n", id)
 	}
+
+	sum := 0
+	for _, id := range ids {
+		sum += id
+	}
+	fmt.Println("Sum", sum)
 }
