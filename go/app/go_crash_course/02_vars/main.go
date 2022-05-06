@@ -2,10 +2,11 @@ package main
 
 import "fmt"
 
+var name = "Brad"
+
 func main() {
-	var name = "Brad"
 	var age int32 = 37
-	const isCool = true
+	var isCool = true
 	isCool = false
 
 	fmt.Println(name, age)
