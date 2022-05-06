@@ -12,4 +12,7 @@ func main() {
 	fmt.Println(fruitArr)
 	fmt.Println(fruitArr[0])
 
+	fruitSlice := []string{"Apple", "Orange", "Grape", "Banana"}
+	fmt.Println(len(fruitSlice))
+	fmt.Println(fruitSlice[1:3])
 }
