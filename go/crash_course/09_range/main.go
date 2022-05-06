@@ -8,4 +8,8 @@ func main() {
 	for i, id := range ids {
 		fmt.Printf("%d - iD: %d\n", i, id)
 	}
+
+	for _, id := range ids {
+		fmt.Printf("ID: %d\n", id)
+	}
 }
