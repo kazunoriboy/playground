@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-var name = "Brad"
+name := "Brad"
 
 func main() {
 	var age int32 = 37
