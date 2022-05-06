@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/kazunoriboy/playground/go/app/go_crash_course/03_packages/strutil"
+	"github.com/kazunoriboy/playground/go/crash_course/03_packages/strutil"
 	"math"
 )
 
