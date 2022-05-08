@@ -8,4 +8,7 @@ func main() {
 
 	fmt.Println(a, b)
 	fmt.Printf("%T\n", b)
+
+	fmt.Println(*b)
+	fmt.Println(*&a)
 }
