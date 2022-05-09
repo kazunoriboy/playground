@@ -11,4 +11,7 @@ func main() {
 
 	fmt.Println(*b)
 	fmt.Println(*&a)
+
+	*b = 10
+	fmt.Println(a)
 }
