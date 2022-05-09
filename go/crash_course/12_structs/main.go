@@ -17,6 +17,10 @@ func (person Person) greet() string {
 	return "Hello, my name is " + person.firstName + " " + person.lastName + " and I am " + strconv.Itoa(person.age)
 }
 
+func (person *Person) hasBirthday() {
+	person.age++
+}
+
 func main() {
 	// person1 := Person{
 	// 	firstName: "Samantha",
@@ -34,5 +38,8 @@ func main() {
 	person1.age++
 	fmt.Println(person1.age)
 
+	person1.hasBirthday()
+	person1.hasBirthday()
+	person1.hasBirthday()
 	fmt.Println(person1.greet())
 }
