@@ -22,4 +22,8 @@ func main() {
 	person1 := Person{"Samantha", "Smith", "Boston", "f", 5}
 
 	fmt.Println(person1)
+
+	fmt.Println(person1.firstName)
+	person1.age++
+	fmt.Println(person1.age)
 }
