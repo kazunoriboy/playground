@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 type Person struct {
 	firstName string
@@ -8,6 +11,10 @@ type Person struct {
 	city      string
 	gender    string
 	age       int
+}
+
+func (person Person) greet() string {
+	return "Hello, my name is " + person.firstName + " " + person.lastName + " and I am " + strconv.Itoa(person.age)
 }
 
 func main() {
@@ -26,4 +33,6 @@ func main() {
 	fmt.Println(person1.firstName)
 	person1.age++
 	fmt.Println(person1.age)
+
+	fmt.Println(person1.greet())
 }
