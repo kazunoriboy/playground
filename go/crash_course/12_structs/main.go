@@ -21,6 +21,14 @@ func (person *Person) hasBirthday() {
 	person.age++
 }
 
+func (person *Person) getMarried(spouseLastName string) {
+	if person.gender == "m" {
+		return
+	} else {
+		person.lastName = spouseLastName
+	}
+}
+
 func main() {
 	// person1 := Person{
 	// 	firstName: "Samantha",
@@ -42,4 +50,11 @@ func main() {
 	person1.hasBirthday()
 	person1.hasBirthday()
 	fmt.Println(person1.greet())
+
+	person1.getMarried("Williams")
+	fmt.Println(person1)
+
+	person2 := Person{"Bob", "Johnson", "New York", "m", 30}
+	person2.getMarried("Thompson")
+	fmt.Println(person2)
 }
