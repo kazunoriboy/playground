@@ -11,13 +11,15 @@ type Person struct {
 }
 
 func main() {
-	person1 := Person{
-		firstName: "Samantha",
-		lastName:  "Smith",
-		city:      "Boston",
-		gender:    "f",
-		age:       25,
-	}
+	// person1 := Person{
+	// 	firstName: "Samantha",
+	// 	lastName:  "Smith",
+	// 	city:      "Boston",
+	// 	gender:    "f",
+	// 	age:       25,
+	// }
+
+	person1 := Person{"Samantha", "Smith", "Boston", "f", 5}
 
 	fmt.Println(person1)
 }
