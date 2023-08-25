@@ -18,6 +18,7 @@ resource "aws_instance" "app_server" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["sg-05929e18718e83ef8"]
   subnet_id              = "subnet-023e6ac789806a264"
+  associate_public_ip_address = true
 
   tags = {
     Name = var.instance_name
