@@ -1,10 +1,4 @@
 terraform {
-  cloud {
-    organization = "organization-name"
-    workspaces {
-      name = "learn-tfc-aws"
-    }
-  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
